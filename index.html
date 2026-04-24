@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <title>ShadowScan AI – Automated Website Security Scanner</title>
+  <meta name="description" content="ShadowScan AI automatically scans your website for vulnerabilities, misconfigurations, and security risks. Built for small business owners with no cybersecurity experience required." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Automated Website Security Made Easy – ShadowScan AI" />
+  <meta property="og:description" content="ShadowScan AI scans your website for security issues and gives you simple, actionable guidance to stay protected. Safe by design, no access to your data." />
+  <meta property="og:image" content="images/og-preview.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Automated Website Security Made Easy – ShadowScan AI" />
+  <meta name="twitter:description" content="ShadowScan AI scans your website for security issues and gives you simple, actionable guidance to stay protected. Safe by design, no access to your data." />
+
+  <!-- Favicon (replace with your own) -->
+  <link rel="icon" href="images/og-preview.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1141958824588736');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1141958824588736&ev=PageView&noscript=1" alt="" /></noscript>
+</head>
+
+<body class="body">
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <div class="nav is-accent-primary">
+    <div class="nav_container">
+      <div class="nav_left">
+        <a href="#signup-form" class="nav_logo w-inline-block">
+          <div class="nav_logo-icon">
+            <svg width="100%" height="100%" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet">
+              <path d="M28,0H5C2.24,0,0,2.24,0,5v23c0,2.76,2.24,5,5,5h23c2.76,0,5-2.24,5-5V5c0-2.76-2.24-5-5-5ZM29,17c-6.63,0-12,5.37-12,12h-1c0-6.63-5.37-12-12-12v-1c6.63,0,12-5.37,12-12h1c0,6.63,5.37,12,12,12v1Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="paragraph_large margin-bottom_none">ShadowScan AI</div>
+        </a>
+      </div>
+      <button class="nav_mobile-menu-button" id="mobile-menu-btn" aria-label="Open navigation menu">
+        <div class="icon on-accent-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
+              <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+              <line x1="1" y1="5" x2="23" y2="5"></line>
+              <line x1="1" y1="19" x2="23" y2="19"></line>
+            </g>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
+    <a href="#signup-form" class="mobile-nav-link">Sign Up</a>
+    <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#pricing" class="mobile-nav-link">Pricing</a>
+    <a href="#founder" class="mobile-nav-link">About</a>
+  </div>
+
+  <!-- ===================== HERO / SIGNUP FORM ===================== -->
+  <header id="signup-form" class="section max-height_100vh_desktop overflow_hidden flex_horizontal is-accent-primary">
+    <div class="container">
+      <div class="w-layout-grid grid_2-col tablet-1-col gap-large">
+        <div class="rotate_-12deg tablet-straight">
+          <div class="w-layout-grid grid_1-col gap-small">
+            <img width="592" height="395" alt="Innovation lab background" src="images/hero-bg-1.avif" loading="lazy" class="image_cover ratio_3x2" />
+            <img width="592" height="395" alt="Interactive lesson on tablet" src="images/hero-bg-2.avif" loading="lazy" class="image_cover ratio_3x2" />
+          </div>
+        </div>
+        <div class="header">
+          <h1 class="heading_h1">Website Security<br/>Made Easy</h1>
+          <div class="at-risk">
+            <div class="usecase-card">
+              <h2 class="usecase-heading">Fix What's Putting Your Website at Risk Before It Costs You Customers.</h2>
+              <p class="usecase-paragraph">Most business owners don't realize their website is vulnerable until something breaks. ShadowScan uses AI to quickly check for real-world security issues and helps automatically fix them.</p>
+            </div>
+          </div>
+          <div>
+            <div class="w-form">
+              <form id="email-form" name="email-form" method="post" action="#">
+                <label for="name">Name</label>
+                <input class="w-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" />
+                <label for="email">Email Address</label>
+                <input class="w-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" required />
+                <input type="submit" class="w-button" value="Submit" />
+              </form>
+              <div class="w-form-done" style="display:none;">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail" style="display:none;">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PROTECT YOUR BUSINESS ===================== -->
+  <section class="provides-section fade-in-section">
+    <div class="w-layout-blockcontainer container-2 w-container">
+      <h2 class="heading_h2">Protect Your Business</h2>
+      <div class="provides">
+        <div class="provides-2">
+          <h3 class="usecase-heading">ShadowScan uses AI to check your website for</h3>
+          <p class="usecase-paragraph">
+            Best Security Practices<br/>
+            Outdated software<br/>
+            Common hacking risks<br/>
+            Exposed customer data<br/>
+            Trust-damaging issues<br/>
+            Weak security settings<br/>
+            AI / Search Engine Trust
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WE HELP YOU AVOID ===================== -->
+  <section class="problems-section fade-in-section">
+    <div class="w-layout-blockcontainer container-2 w-container">
+      <h2 class="heading_h2">We Help You Avoid</h2>
+      <p class="paragraph-2"><strong>These are common incidents that cost small<br/>businesses customers, revenue, and reputation.<br/><br/>ShadowScan catches the risks before they become disasters.</strong></p>
+      <div class="usecase-cards-wrapper">
+        <div class="usecase-card">
+          <h3 class="usecase-heading">Checkout Hijack</h3>
+          <p class="usecase-paragraph">Maria ran a small online store until a hidden script on her checkout page started stealing customer card details.<br/><br/>An outdated plugin made the attack possible.<br/><br/><strong>ShadowScan would have flagged the vulnerability before her customers were affected.</strong></p>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-heading">SEO Blacklist</h3>
+          <p class="usecase-paragraph">Derek's service business disappeared from Google overnight.<br/><br/>Attackers planted spam pages through a simple configuration flaw, causing Google to blacklist his site.<br/><br/><strong>ShadowScan would have detected the issue long before it hurt his rankings.</strong></p>
+        </div>
+        <div class="usecase-card">
+          <h3 class="usecase-heading">Exposed Files</h3>
+          <p class="usecase-paragraph">Lena's client documents were accidentally publicly accessible due to a server misconfiguration she didn't know existed.<br/><br/><strong>ShadowScan would have alerted her immediately, preventing a major breach of trust.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES PROVIDED ===================== -->
+  <section id="services" class="section fade-in-section">
+    <div class="header is-align-center">
+      <h2 class="heading_h2">Services Provided</h2>
+    </div>
+    <div class="container">
+      <div class="flex_vertical gap-xxlarge">
+
+        <!-- Attack Surface Scan -->
+        <div class="w-layout-grid grid_2-col tablet-1-col gap-large">
+          <div class="header margin-bottom_none">
+            <h2 class="heading-3">Attack Surface Scan</h2>
+            <p class="paragraph_large margin-bottom_small">Find exposed subdomains, endpoints, and misconfigurations across your website. Get a prioritized action list so you know exactly what to fix first.</p>
+            <div class="button-group">
+              <a href="#signup-form" class="text-button w-inline-block">
+                <div>Scan now</div>
+                <div class="button_icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 8H14.5M14.5 8L8.5 2M14.5 8L8.5 14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+          <img width="592" height="405" alt="Woman analyzing business insights with data analytics software" src="images/service-scan.avif" loading="lazy" class="image" />
+        </div>
+
+        <!-- Risk Action Center -->
+        <div class="w-layout-grid grid_2-col tablet-1-col gap-large">
+          <div class="header margin-bottom_none">
+            <h2 class="heading-4">Risk Action Center</h2>
+            <p class="paragraph_large margin-bottom_small">Get prioritized risk cards with plain-English explanations, effort estimates, and step-by-step fixes anyone can follow.</p>
+            <div class="button-group">
+              <a href="#signup-form" class="text-button w-inline-block">
+                <div>Check now</div>
+                <div class="button_icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 8H14.5M14.5 8L8.5 2M14.5 8L8.5 14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+          <img width="592" height="405" alt="Person working on AI project" src="images/service-risk.avif" loading="lazy" class="image" />
+        </div>
+
+        <!-- Executive Report -->
+        <div class="w-layout-grid grid_2-col tablet-1-col gap-large">
+          <div class="header margin-bottom_none">
+            <h2 class="heading-5">Executive Report</h2>
+            <p class="paragraph_large margin-bottom_small">Share findings with leadership and engineers through concise PDF and CSV reports. Our AI transforms complex security data into clear, actionable insights that anyone can understand.</p>
+            <div class="button-group">
+              <a href="#signup-form" class="text-button w-inline-block">
+                <div>View now</div>
+                <div class="button_icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 8H14.5M14.5 8L8.5 2M14.5 8L8.5 14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+          <img width="592" height="405" alt="Futuristic technology for data analytics and business intelligence" src="images/service-report.avif" loading="lazy" class="image" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROTECT YOUR WEBSITE (FEATURES) ===================== -->
+  <section class="section is-secondary fade-in-section">
+    <div class="container">
+      <div class="header is-align-center">
+        <h2 class="heading_h2">Protect Your Website</h2>
+      </div>
+      <div class="w-layout-grid grid_3-col gap-large">
+
+        <!-- Feature 1 -->
+        <div class="flex_vertical is-x-center">
+          <div class="is-large-1x1 is-background margin-bottom_xsmall">
+            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+              <path d="M9.24998 18.7103C6.60958 17.6271 4.75 15.0307 4.75 12C4.75 8.96938 6.60958 6.37304 9.24997 5.28979" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+              <path d="M14.75 5.28979C17.3904 6.37303 19.25 8.96938 19.25 12.0001C19.25 15.0307 17.3904 17.6271 14.75 18.7103" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+              <path d="M4 19.2501L8.99998 19.2501C9.13805 19.2501 9.24998 19.1381 9.24998 19.0001L9.24997 14" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+              <path d="M20 4.75L15 4.75003C14.8619 4.75003 14.75 4.86196 14.75 5.00003L14.75 10.0001" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+            </svg>
+          </div>
+          <h3 class="heading_h4">Know What Matters First</h3>
+          <p>We rank real security issues by business impact so you focus on what actually puts your business at risk.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flex_vertical is-x-center">
+          <div class="is-large-1x1 is-background margin-bottom_xsmall">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+              <path d="M12.5 18.25C16.2279 18.25 19.25 15.2279 19.25 11.5C19.25 7.77208 16.2279 4.75 12.5 4.75C8.77208 4.75 5.75 7.77208 5.75 11.5C5.75 12.6007 6.01345 13.6398 6.48072 14.5578L5 19L9.71819 17.6519C10.5664 18.0361 11.5082 18.25 12.5 18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="heading_h4">What's Exposed on Your Website</h3>
+          <p>We identify hidden pages, login areas, misconfigured storage, and other exposures attackers look for even ones you didn't know existed.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex_vertical is-x-center">
+          <div class="is-large-1x1 is-background margin-bottom_xsmall">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+              <path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              <path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="heading_h4">Safe Website Checks</h3>
+          <p>ShadowScan safely reviews what your website publicly exposes without logging in, changing anything, or disrupting your site. No invasive scans. No risk to your business.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="flex_vertical is-x-center">
+          <div class="is-large-1x1 is-background margin-bottom_xsmall">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+              <path d="M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z" stroke="currentColor" stroke-width="1.5"></path>
+              <path d="M9 12L11 14L15.5 9.5" stroke="currentColor" stroke-width="1.5"></path>
+            </svg>
+          </div>
+          <h3 class="heading_h4">Simple Fixes You Can Follow</h3>
+          <p>Every issue includes plain-English explanations and step-by-step instructions so you know exactly what to do, even without technical experience.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="flex_vertical is-x-center">
+          <div class="is-large-1x1 is-background margin-bottom_xsmall">
+            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+              <path d="M17.3654 5.32894C17.8831 5.54543 18.3534 5.86273 18.7495 6.26274C19.146 6.6625 19.4604 7.13723 19.675 7.65978C19.8895 8.18233 20 8.74246 20 9.30814C20 9.87384 19.8895 10.4339 19.675 10.9565C19.4604 11.4791 19.146 11.9538 18.7495 12.3535L12.0001 19L5.2496 12.3535C4.44951 11.5457 4 10.4501 4 9.3076C4 8.16516 4.44951 7.0695 5.2496 6.26166C6.04975 5.45384 7.13498 5 8.26647 5C9.39804 5 10.4833 5.45384 11.2833 6.26166L12.016 6.99843L12.7158 6.26274C13.112 5.86273 13.5823 5.54543 14.0999 5.32894C14.6176 5.11246 15.1724 5.00103 15.7327 5.00103C16.2929 5.00103 16.8478 5.11246 17.3654 5.32894Z" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+            </svg>
+          </div>
+          <h3 class="heading_h4">Easy Actionable Reports</h3>
+          <p>Get easy-to-read summaries for decision-making, plus detailed reports you can share with a developer, agency, or IT provider.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="flex_vertical is-x-center">
+          <div class="is-large-1x1 is-background margin-bottom_xsmall">
+            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12C8.41828 12 12 8.41828 12 4C12 8.41828 15.5817 12 20 12C15.5817 12 12 15.5817 12 20C12 15.5817 8.41828 12 4 12Z" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+            </svg>
+          </div>
+          <h3 class="heading_h4">Ongoing Protection</h3>
+          <p>We keep watching your site and alert you when new risks appear so you're not caught off guard weeks or months later.</p>
+        </div>
+
+      </div>
+      <div class="button-group is-align-center margin-top_large">
+        <a href="#signup-form" class="button w-button">Request scan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING ===================== -->
+  <section id="pricing" class="section is-inverse fade-in-section">
+    <div class="container">
+      <div class="header is-align-center">
+        <h2 class="heading_h1">Security That<br/>Scales With You</h2>
+      </div>
+      <ul role="list" class="grid_4-col gap-small padding_none margin-bottom_none w-list-unstyled">
+
+        <!-- Preview -->
+        <li class="card on-inverse">
+          <div class="card_body is-small">
+            <div class="margin_bottom-auto">
+              <h3 class="heading_h4">Preview</h3>
+              <p class="paragraph-3">Early access with a one-time<br/>scan and sample report.<br/><br/></p>
+            </div>
+            <h4 class="heading_h2 margin-bottom_none">$0</h4>
+            <p class="text-color_secondary">Monthly</p>
+            <div class="margin-top_small">
+              <div class="button-group is-vertical-stretch">
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Start free</div></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Starter -->
+        <li class="card on-inverse">
+          <div class="card_body is-small">
+            <div class="margin_bottom-auto">
+              <h3 class="heading_h4">Starter</h3>
+              <p class="paragraph-4">Monthly scans and simple<br/>PDF / CSV report exports.<br/><br/></p>
+            </div>
+            <h4 class="heading_h2 margin-bottom_none">$49</h4>
+            <p class="text-color_secondary">Monthly</p>
+            <div class="margin-top_small">
+              <div class="button-group is-vertical-stretch">
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Subscribe</div></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Growth -->
+        <li class="card on-inverse">
+          <div class="card_body is-small">
+            <div class="margin_bottom-auto">
+              <h3 class="heading_h4">Growth</h3>
+              <p class="paragraph-5">Weekly scans and continuous monitoring with alerts<br/>to catch new risks fast.</p>
+            </div>
+            <h4 class="heading_h2 margin-bottom_none">$149</h4>
+            <p class="text-color_secondary">Monthly</p>
+            <div class="margin-top_small">
+              <div class="button-group is-vertical-stretch">
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Subscribe</div></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Pro -->
+        <li class="card on-inverse">
+          <div class="card_body is-small">
+            <div class="margin_bottom-auto">
+              <h3 class="heading_h4">Pro</h3>
+              <p class="paragraph-6">Weekly scans, continuous monitoring with alerts to catch new risks fast, and premium support.</p>
+            </div>
+            <h4 class="heading_h2 margin-bottom_none">$399</h4>
+            <p class="text-color_secondary">Monthly</p>
+            <div class="margin-top_small">
+              <div class="button-group is-vertical-stretch">
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Subscribe</div></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== THE FOUNDER ===================== -->
+  <section id="founder" class="section is-inverse fade-in-section">
+    <div class="founder">
+      <div class="header is-align-center">
+        <h2 class="heading-2">The Founder</h2>
+        <img
+          src="images/founder.jpg"
+          loading="lazy"
+          width="367"
+          sizes="(max-width: 479px) 100vw, 367px"
+          alt="Bryan Totty Founder"
+          srcset="images/founder-500.jpg 500w, images/founder-800.jpg 800w, images/founder.jpg 1000w"
+        />
+        <p class="subheading">
+          <br/><strong class="bold-text">Built by a Cybersecurity &amp; Cloud Engineer With 15+ Years of Experience.</strong>
+          <br/><br/>I'm Bryan Totty, the founder of ShadowScan AI. I've spent the past decade working across cybersecurity, cloud architecture, infrastructure engineering, and automation for companies ranging from high-growth startups to Fortune-level enterprises.
+          <br/><br/><strong class="bold-text-2">I've held security positions at: Meta (Facebook), Microsoft, IBM, and Red Hat.</strong>
+          <br/><br/>My background includes leading technical initiatives in cloud security, infrastructure hardening, identity and access management, enterprise-scale monitoring and automation, and secure systems design across Azure, AWS, and hybrid environments.
+          <br/><br/><strong class="bold-text-3">I've built tools that help companies detect and reduce risk.</strong>
+          <br/><br/>Throughout my career, I've seen a clear pattern: most website owners and small businesses don't have access to the same security capabilities enterprises rely on, and they're often unaware of critical vulnerabilities.
+          <br/><br/>ShadowScan AI was created to solve that problem.
+          <br/><br/><strong class="bold-text-4">Website security made simple. No cybersecurity experience required.</strong>
+          <br/><br/>If you'd like to connect, you can reach me here:
+          <br/><br/><a href="https://www.linkedin.com/in/bryantotty/"><strong>linkedin.com/in/bryantotty</strong></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer is-inverse">
+    <div class="container">
+      <div class="flex_vertical gap-small is-x-left">
+        <a href="#signup-form" class="logo w-inline-block">
+          <div class="nav_logo-icon">
+            <svg width="100%" height="100%" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet">
+              <path d="M28,0H5C2.24,0,0,2.24,0,5v23c0,2.76,2.24,5,5,5h23c2.76,0,5-2.24,5-5V5c0-2.76-2.24-5-5-5ZM29,17c-6.63,0-12,5.37-12,12h-1c0-6.63-5.37-12-12-12v-1c6.63,0,12-5.37,12-12h1c0,6.63,5.37,12,12,12v1Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="paragraph_xlarge margin-bottom_none text_all-caps">SHADOWSCAN AI</div>
+        </a>
+        <ul role="list" aria-label="Social media links" class="footer_icon-group margin_top-auto w-list-unstyled">
+          <li class="margin-bottom_none">
+            <a href="#" class="footer_icon-link w-inline-block" aria-label="Facebook">
+              <div class="icon_small-1x1 text-color_inherit">
+                <svg width="100%" height="100%" viewBox="0 0 16 16">
+                  <path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <span class="screen-reader">Facebook</span>
+            </a>
+          </li>
+          <li class="margin-bottom_none">
+            <a href="https://www.instagram.com/shadowscan.ai/" target="_blank" rel="noopener noreferrer" class="footer_icon-link w-inline-block" aria-label="Instagram">
+              <div class="icon_small-1x1 text-color_inherit">
+                <svg width="100%" height="100%" viewBox="0 0 16 16">
+                  <path d="M8,1.441c2.136,0,2.389.009,3.233.047a4.419,4.419,0,0,1,1.485.276,2.472,2.472,0,0,1,.92.6,2.472,2.472,0,0,1,.6.92,4.419,4.419,0,0,1,.276,1.485c.038.844.047,1.1.047,3.233s-.009,2.389-.047,3.233a4.419,4.419,0,0,1-.276,1.485,2.644,2.644,0,0,1-1.518,1.518,4.419,4.419,0,0,1-1.485.276c-.844.038-1.1.047-3.233.047s-2.389-.009-3.233-.047a4.419,4.419,0,0,1-1.485-.276,2.472,2.472,0,0,1-.92-.6,2.472,2.472,0,0,1-.6-.92,4.419,4.419,0,0,1-.276-1.485c-.038-.844-.047-1.1-.047-3.233s.009-2.389.047-3.233a4.419,4.419,0,0,1,.276-1.485,2.472,2.472,0,0,1,.6-.92,2.472,2.472,0,0,1,.92-.6,4.419,4.419,0,0,1,1.485-.276c.844-.038,1.1-.047,3.233-.047M8,0C5.827,0,5.555.009,4.7.048A5.868,5.868,0,0,0,2.76.42a3.908,3.908,0,0,0-1.417.923A3.908,3.908,0,0,0,.42,2.76,5.868,5.868,0,0,0,.048,4.7C.009,5.555,0,5.827,0,8s.009,2.445.048,3.3A5.868,5.868,0,0,0,.42,13.24a3.908,3.908,0,0,0,.923,1.417,3.908,3.908,0,0,0,1.417.923,5.868,5.868,0,0,0,1.942.372C5.555,15.991,5.827,16,8,16s2.445-.009,3.3-.048a5.868,5.868,0,0,0,1.942-.372,4.094,4.094,0,0,0,2.34-2.34,5.868,5.868,0,0,0,.372-1.942c.039-.853.048-1.125.048-3.3s-.009-2.445-.048-3.3A5.868,5.868,0,0,0,15.58,2.76a3.908,3.908,0,0,0-.923-1.417A3.908,3.908,0,0,0,13.24.42,5.868,5.868,0,0,0,11.3.048C10.445.009,10.173,0,8,0Z" fill="currentColor"></path>
+                  <path d="M8,3.892A4.108,4.108,0,1,0,12.108,8,4.108,4.108,0,0,0,8,3.892Zm0,6.775A2.667,2.667,0,1,1,10.667,8,2.667,2.667,0,0,1,8,10.667Z" fill="currentColor"></path>
+                  <circle cx="12.27" cy="3.73" r="0.96" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="screen-reader">Instagram</span>
+            </a>
+          </li>
+          <li class="margin-bottom_none">
+            <a href="#" class="footer_icon-link w-inline-block" aria-label="X (Twitter)">
+              <div class="icon_small-1x1 text-color_inherit">
+                <svg width="100%" height="100%" viewBox="0 0 16 16">
+                  <path d="M12.3723 1.16992H14.6895L9.6272 6.95576L15.5825 14.829H10.9196L7.26734 10.0539L3.08837 14.829H0.769833L6.18442 8.64037L0.471436 1.16992H5.2528L8.55409 5.53451L12.3723 1.16992ZM11.5591 13.4421H12.843L4.55514 2.48399H3.17733L11.5591 13.4421Z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <span class="screen-reader">X</span>
+            </a>
+          </li>
+          <li class="margin-bottom_none">
+            <a href="#" class="footer_icon-link w-inline-block" aria-label="LinkedIn">
+              <div class="icon_small-1x1 text-color_inherit">
+                <svg width="100%" height="100%" viewBox="0 0 16 16">
+                  <path d="M15.3,0H0.7C0.3,0,0,0.3,0,0.7v14.7C0,15.7,0.3,16,0.7,16h14.7c0.4,0,0.7-0.3,0.7-0.7V0.7 C16,0.3,15.7,0,15.3,0z M4.7,13.6H2.4V6h2.4V13.6z M3.6,5C2.8,5,2.2,4.3,2.2,3.6c0-0.8,0.6-1.4,1.4-1.4c0.8,0,1.4,0.6,1.4,1.4 C4.9,4.3,4.3,5,3.6,5z M13.6,13.6h-2.4V9.9c0-0.9,0-2-1.2-2c-1.2,0-1.4,1-1.4,2v3.8H6.2V6h2.3v1h0c0.3-0.6,1.1-1.2,2.2-1.2 c2.4,0,2.8,1.6,2.8,3.6V13.6z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <span class="screen-reader">LinkedIn</span>
+            </a>
+          </li>
+          <li class="margin-bottom_none">
+            <a href="https://www.youtube.com/@ShadowScanAI" target="_blank" rel="noopener noreferrer" class="footer_icon-link w-inline-block" aria-label="YouTube">
+              <div class="icon_small-1x1 text-color_inherit">
+                <svg width="100%" height="100%" viewBox="0 0 16 16">
+                  <path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <span class="screen-reader">YouTube</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

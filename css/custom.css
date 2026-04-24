@@ -1,0 +1,351 @@
+/* ShadowScan AI - Custom Overrides & Mobile-First Enhancements */
+
+/* ============================
+   SMOOTH SCROLLING
+   ============================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================
+   MOBILE NAV OVERLAY
+   ============================ */
+.nav_mobile-menu-button {
+  cursor: pointer;
+}
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.mobile-nav-overlay.is-open {
+  display: flex;
+}
+
+.mobile-nav-overlay a {
+  color: #fff;
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.mobile-nav-overlay a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================
+   FORM ENHANCEMENTS
+   ============================ */
+.w-form {
+  max-width: 100%;
+}
+
+#email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#email-form label {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+#email-form .w-input {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#email-form .w-input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+#email-form .w-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#email-form .w-button {
+  margin-top: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#email-form .w-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#email-form .w-button:active {
+  transform: translateY(0);
+}
+
+/* ============================
+   SMOOTH TRANSITIONS / ANIMATIONS
+   ============================ */
+.usecase-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usecase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card.on-inverse {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.on-inverse:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.text-button {
+  transition: opacity 0.2s;
+}
+
+.text-button:hover {
+  opacity: 0.8;
+}
+
+.image {
+  transition: transform 0.4s ease;
+}
+
+.image:hover {
+  transform: scale(1.02);
+}
+
+/* Fade-in on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   FOUNDER SECTION IMPROVEMENTS
+   ============================ */
+.founder img {
+  border-radius: 12px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================
+   MOBILE-FIRST ENHANCEMENTS
+   ============================ */
+
+/* Touch target minimums */
+a, button, .w-button, input[type="submit"] {
+  min-height: 44px;
+}
+
+/* Better tap targets for footer icons */
+.footer_icon-link {
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile breakpoints */
+@media screen and (max-width: 767px) {
+  /* Typography scaling */
+  .heading_h1 {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .heading_h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .heading_h4 {
+    font-size: 1.125rem !important;
+  }
+
+  .paragraph_large {
+    font-size: 1rem !important;
+  }
+
+  /* Hero section mobile */
+  .section.max-height_100vh_desktop {
+    max-height: none !important;
+    min-height: auto;
+    padding: 2rem 0;
+  }
+
+  .rotate_-12deg {
+    display: none;
+  }
+
+  /* Stack grids on mobile */
+  .grid_2-col,
+  .grid_3-col {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Pricing cards: stack vertically */
+  .grid_4-col {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Use-case cards */
+  .usecase-cards-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .usecase-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Section padding */
+  .section,
+  .provides-section,
+  .problems-section {
+    padding: 2.5rem 1rem !important;
+  }
+
+  .container,
+  .container-2 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Images full width on mobile */
+  .image {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+  }
+
+  /* Footer mobile */
+  .footer .flex_vertical {
+    text-align: center;
+    align-items: center !important;
+  }
+
+  .footer_icon-group {
+    justify-content: center;
+  }
+
+  /* Founder section */
+  .founder img {
+    max-width: 250px;
+  }
+
+  .founder .subheading {
+    font-size: 0.95rem !important;
+    text-align: left;
+  }
+
+  /* Form mobile */
+  #email-form .w-button {
+    width: 100%;
+  }
+
+  /* Service sections: image after text on mobile */
+  .grid_2-col.tablet-1-col .image {
+    order: 2;
+  }
+
+  .grid_2-col.tablet-1-col .header {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .heading_h1 {
+    font-size: 1.65rem !important;
+  }
+
+  .heading_h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .section,
+  .provides-section,
+  .problems-section {
+    padding: 2rem 0.75rem !important;
+  }
+
+  .card_body.is-small {
+    padding: 1.25rem !important;
+  }
+
+  /* Pricing card text */
+  .paragraph-3,
+  .paragraph-4,
+  .paragraph-5,
+  .paragraph-6 {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ============================
+   TABLET ADJUSTMENTS
+   ============================ */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .grid_4-col {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .grid_3-col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
