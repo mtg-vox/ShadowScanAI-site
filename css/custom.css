@@ -1405,6 +1405,12 @@ a, button, .w-button, input[type="submit"] {
     max-width: 100%;
   }
 
+  .hero-eyebrow {
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .hero-title {
     font-size: 2.18rem !important;
     line-height: 1.05 !important;
