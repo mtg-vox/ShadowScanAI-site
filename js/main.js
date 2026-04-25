@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = '';
     });
 
-    // Close on link click
     overlay.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         overlay.classList.remove('is-open');
@@ -28,13 +27,51 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
         overlay.classList.remove('is-open');
         document.body.style.overflow = '';
       }
     });
+  }
+
+  // ============================
+  // STICKY NAV SHADOW ON SCROLL
+  // ============================
+  const nav = document.getElementById('main-nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 10) {
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.remove('is-scrolled');
+      }
+    }, { passive: true });
+  }
+
+  // ============================
+  // FLOATING CTA (MOBILE)
+  // ============================
+  const floatingCta = document.getElementById('floating-cta');
+  const heroSection = document.getElementById('signup-form');
+
+  if (floatingCta && heroSection) {
+    var floatingVisible = false;
+    var floatingObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          if (!floatingVisible) {
+            floatingCta.classList.add('is-visible');
+            floatingVisible = true;
+          }
+        } else {
+          floatingCta.classList.remove('is-visible');
+          floatingVisible = false;
+        }
+      });
+    }, { threshold: 0.1 });
+
+    floatingObserver.observe(heroSection);
   }
 
   // ============================
@@ -59,14 +96,32 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(el);
     });
   } else {
-    // Fallback: show all immediately
     fadeEls.forEach(function (el) {
       el.classList.add('is-visible');
     });
   }
 
   // ============================
-  // FORM SUBMISSION HANDLING
+  // FOUNDER BIO EXPAND/COLLAPSE
+  // ============================
+  const readMoreBtn = document.getElementById('founder-read-more-btn');
+  const founderBioMore = document.getElementById('founder-bio-more');
+
+  if (readMoreBtn && founderBioMore) {
+    readMoreBtn.addEventListener('click', function () {
+      var isExpanded = founderBioMore.classList.contains('is-expanded');
+      if (isExpanded) {
+        founderBioMore.classList.remove('is-expanded');
+        readMoreBtn.textContent = 'Read more';
+      } else {
+        founderBioMore.classList.add('is-expanded');
+        readMoreBtn.textContent = 'Read less';
+      }
+    });
+  }
+
+  // ============================
+  // FORM SUBMISSION + CONVERSION TRACKING
   // ============================
   const form = document.getElementById('email-form');
   const formDone = document.querySelector('.w-form-done');
@@ -76,21 +131,37 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const name = form.querySelector('#name').value.trim();
-      const email = form.querySelector('#email').value.trim();
+      var name = form.querySelector('#name').value.trim();
+      var email = form.querySelector('#email').value.trim();
 
       if (!email) {
         if (formFail) formFail.style.display = 'block';
         return;
       }
 
-      // For now, show success. Replace with your actual endpoint.
-      form.style.display = 'none';
-      if (formDone) formDone.style.display = 'block';
-      if (formFail) formFail.style.display = 'none';
+      // Submit to Formspree
+      var formData = new FormData(form);
 
-      // TODO: Send to your backend / email service
-      console.log('Form submitted:', { name: name, email: email });
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          if (formDone) formDone.style.display = 'block';
+          if (formFail) formFail.style.display = 'none';
+
+          // Fire Meta Pixel Lead event
+          if (typeof fbq === 'function') {
+            fbq('track', 'Lead', { content_name: 'Free Scan Signup' });
+          }
+        } else {
+          if (formFail) formFail.style.display = 'block';
+        }
+      }).catch(function () {
+        if (formFail) formFail.style.display = 'block';
+      });
     });
   }
 

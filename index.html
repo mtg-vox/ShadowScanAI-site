@@ -47,8 +47,8 @@
 
 <body class="body">
 
-  <!-- ===================== NAVIGATION ===================== -->
-  <div class="nav is-accent-primary">
+  <!-- ===================== NAVIGATION (STICKY) ===================== -->
+  <div class="nav is-accent-primary nav-sticky" id="main-nav">
     <div class="nav_container">
       <div class="nav_left">
         <a href="#signup-form" class="nav_logo w-inline-block">
@@ -60,17 +60,20 @@
           <div class="paragraph_large margin-bottom_none">ShadowScan AI</div>
         </a>
       </div>
-      <button class="nav_mobile-menu-button" id="mobile-menu-btn" aria-label="Open navigation menu">
-        <div class="icon on-accent-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
-              <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
-              <line x1="1" y1="5" x2="23" y2="5"></line>
-              <line x1="1" y1="19" x2="23" y2="19"></line>
-            </g>
-          </svg>
-        </div>
-      </button>
+      <div class="nav_right">
+        <a href="#signup-form" class="nav-cta-btn">Get Free Scan</a>
+        <button class="nav_mobile-menu-button" id="mobile-menu-btn" aria-label="Open navigation menu">
+          <div class="icon on-accent-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
+                <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+                <line x1="1" y1="5" x2="23" y2="5"></line>
+                <line x1="1" y1="19" x2="23" y2="19"></line>
+              </g>
+            </svg>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -103,12 +106,12 @@
           </div>
           <div>
             <div class="w-form">
-              <form id="email-form" name="email-form" method="post" action="#">
+              <form id="email-form" name="email-form" method="post" action="https://formspree.io/f/xwpkvblg">
                 <label for="name">Name</label>
                 <input class="w-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" />
                 <label for="email">Email Address</label>
                 <input class="w-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" required />
-                <input type="submit" class="w-button" value="Submit" />
+                <input type="submit" class="w-button" value="Get My Free Scan" />
               </form>
               <div class="w-form-done" style="display:none;">
                 <div>Thank you! Your submission has been received!</div>
@@ -122,6 +125,27 @@
       </div>
     </div>
   </header>
+
+  <!-- ===================== TRUST BADGES ===================== -->
+  <section class="trust-badges-section">
+    <div class="container">
+      <p class="trust-badges-label">Our founder has held security positions at</p>
+      <div class="trust-badges-row">
+        <div class="trust-badge">
+          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="18" fill="currentColor">Meta</text></svg>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="16" fill="currentColor">Microsoft</text></svg>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="18" fill="currentColor">IBM</text></svg>
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="16" fill="currentColor">Red Hat</text></svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== PROTECT YOUR BUSINESS ===================== -->
   <section class="provides-section fade-in-section">
@@ -363,8 +387,9 @@
           </div>
         </li>
 
-        <!-- Growth -->
-        <li class="card on-inverse">
+        <!-- Growth (MOST POPULAR) -->
+        <li class="card on-inverse is-popular">
+          <div class="popular-badge">Most Popular</div>
           <div class="card_body is-small">
             <div class="margin_bottom-auto">
               <h3 class="heading_h4">Growth</h3>
@@ -374,7 +399,7 @@
             <p class="text-color_secondary">Monthly</p>
             <div class="margin-top_small">
               <div class="button-group is-vertical-stretch">
-                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Subscribe</div></a>
+                <a href="#signup-form" class="button is-secondary w-inline-block is-popular-btn"><div>Subscribe</div></a>
               </div>
             </div>
           </div>
@@ -414,18 +439,20 @@
           alt="Bryan Totty Founder"
           srcset="images/founder-500.jpg 500w, images/founder-800.jpg 800w, images/founder.jpg 1000w"
         />
-        <p class="subheading">
-          <br/><strong class="bold-text">Built by a Cybersecurity &amp; Cloud Engineer With 15+ Years of Experience.</strong>
-          <br/><br/>I'm Bryan Totty, the founder of ShadowScan AI. I've spent the past decade working across cybersecurity, cloud architecture, infrastructure engineering, and automation for companies ranging from high-growth startups to Fortune-level enterprises.
-          <br/><br/><strong class="bold-text-2">I've held security positions at: Meta (Facebook), Microsoft, IBM, and Red Hat.</strong>
-          <br/><br/>My background includes leading technical initiatives in cloud security, infrastructure hardening, identity and access management, enterprise-scale monitoring and automation, and secure systems design across Azure, AWS, and hybrid environments.
-          <br/><br/><strong class="bold-text-3">I've built tools that help companies detect and reduce risk.</strong>
-          <br/><br/>Throughout my career, I've seen a clear pattern: most website owners and small businesses don't have access to the same security capabilities enterprises rely on, and they're often unaware of critical vulnerabilities.
-          <br/><br/>ShadowScan AI was created to solve that problem.
-          <br/><br/><strong class="bold-text-4">Website security made simple. No cybersecurity experience required.</strong>
-          <br/><br/>If you'd like to connect, you can reach me here:
-          <br/><br/><a href="https://www.linkedin.com/in/bryantotty/"><strong>linkedin.com/in/bryantotty</strong></a>
-        </p>
+        <div class="subheading founder-bio">
+          <p><strong class="bold-text">Built by a Cybersecurity &amp; Cloud Engineer With 15+ Years of Experience.</strong></p>
+          <p>I'm Bryan Totty, the founder of ShadowScan AI. I've spent the past decade working across cybersecurity, cloud architecture, infrastructure engineering, and automation for companies ranging from high-growth startups to Fortune-level enterprises.</p>
+          <p><strong class="bold-text-2">I've held security positions at: Meta (Facebook), Microsoft, IBM, and Red Hat.</strong></p>
+          <div class="founder-bio-expandable" id="founder-bio-more">
+            <p>My background includes leading technical initiatives in cloud security, infrastructure hardening, identity and access management, enterprise-scale monitoring and automation, and secure systems design across Azure, AWS, and hybrid environments.</p>
+            <p><strong class="bold-text-3">I've built tools that help companies detect and reduce risk.</strong></p>
+            <p>Throughout my career, I've seen a clear pattern: most website owners and small businesses don't have access to the same security capabilities enterprises rely on, and they're often unaware of critical vulnerabilities.</p>
+            <p>ShadowScan AI was created to solve that problem.</p>
+            <p><strong class="bold-text-4">Website security made simple. No cybersecurity experience required.</strong></p>
+            <p>If you'd like to connect, you can reach me here:<br/><a href="https://www.linkedin.com/in/bryantotty/"><strong>linkedin.com/in/bryantotty</strong></a></p>
+          </div>
+          <button class="founder-read-more" id="founder-read-more-btn">Read more</button>
+        </div>
       </div>
     </div>
   </section>
@@ -499,6 +526,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Mobile CTA -->
+  <a href="#signup-form" class="floating-cta" id="floating-cta" aria-label="Get Free Scan">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Get Free Scan
+  </a>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>

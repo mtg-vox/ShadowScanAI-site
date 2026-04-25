@@ -8,6 +8,197 @@ html {
 }
 
 /* ============================
+   STICKY NAV WITH CTA
+   ============================ */
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.nav-sticky.is-scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: #fff;
+  color: #1a1a2e;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+  white-space: nowrap;
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+  background: #f0f0f0;
+}
+
+.nav-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================
+   TRUST BADGES
+   ============================ */
+.trust-badges-section {
+  background: #f7f7f8;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e5e7;
+}
+
+.trust-badges-label {
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #888;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.trust-badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  opacity: 0.5;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: opacity 0.3s;
+}
+
+.trust-badge:hover {
+  opacity: 0.8;
+}
+
+/* ============================
+   POPULAR PRICING BADGE
+   ============================ */
+.card.on-inverse.is-popular {
+  position: relative;
+  border: 2px solid #fff;
+  transform: scale(1.03);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #1a1a2e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.is-popular-btn {
+  background: #fff !important;
+  color: #1a1a2e !important;
+  font-weight: 700 !important;
+}
+
+.is-popular-btn:hover {
+  background: #f0f0f0 !important;
+}
+
+/* ============================
+   FLOATING MOBILE CTA
+   ============================ */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  z-index: 900;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.floating-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+}
+
+.floating-cta.is-visible {
+  display: inline-flex;
+}
+
+/* ============================
+   FOUNDER BIO COLLAPSIBLE
+   ============================ */
+.founder-bio p {
+  margin-bottom: 0.75rem;
+}
+
+.founder-bio-expandable {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+.founder-bio-expandable.is-expanded {
+  max-height: 800px;
+}
+
+.founder-read-more {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.founder-read-more:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================
    MOBILE NAV OVERLAY
    ============================ */
 .nav_mobile-menu-button {
@@ -199,6 +390,31 @@ a, button, .w-button, input[type="submit"] {
 
 /* Mobile breakpoints */
 @media screen and (max-width: 767px) {
+  /* Floating CTA visible on mobile */
+  .floating-cta.is-visible {
+    display: inline-flex;
+  }
+
+  /* Hide nav CTA on very small screens (floating CTA handles it) */
+  .nav-cta-btn {
+    display: none;
+  }
+
+  /* Popular card: reset scale on mobile */
+  .card.on-inverse.is-popular {
+    transform: scale(1);
+  }
+
+  /* Trust badges smaller on mobile */
+  .trust-badges-row {
+    gap: 1.5rem;
+  }
+
+  .trust-badge svg {
+    width: 90px;
+    height: 30px;
+  }
+
   /* Typography scaling */
   .heading_h1 {
     font-size: 2rem !important;
@@ -288,9 +504,20 @@ a, button, .w-button, input[type="submit"] {
     max-width: 250px;
   }
 
-  .founder .subheading {
+  .founder .subheading,
+  .founder-bio {
     font-size: 0.95rem !important;
     text-align: left;
+  }
+
+  /* Founder bio: collapsed by default on mobile (JS handles) */
+  .founder-bio-expandable {
+    max-height: 0;
+  }
+
+  /* Extra padding at bottom for floating CTA */
+  .footer {
+    padding-bottom: 5rem !important;
   }
 
   /* Form mobile */
@@ -347,5 +574,16 @@ a, button, .w-button, input[type="submit"] {
 
   .grid_3-col {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Desktop: founder bio always expanded */
+@media screen and (min-width: 768px) {
+  .founder-bio-expandable {
+    max-height: none !important;
+  }
+
+  .founder-read-more {
+    display: none;
   }
 }
