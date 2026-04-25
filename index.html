@@ -87,38 +87,53 @@
   </div>
 
   <!-- ===================== HERO / SIGNUP FORM ===================== -->
-  <header id="signup-form" class="section max-height_100vh_desktop overflow_hidden flex_horizontal is-accent-primary">
+  <header id="signup-form" class="section max-height_100vh_desktop overflow_hidden flex_horizontal is-accent-primary hero-elegant">
+    <div class="hero-bg-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="w-layout-grid grid_2-col tablet-1-col gap-large">
-        <div class="rotate_-12deg tablet-straight">
-          <div class="w-layout-grid grid_1-col gap-small">
-            <img width="592" height="395" alt="Innovation lab background" src="images/hero-bg-1.avif" loading="lazy" class="image_cover ratio_3x2" />
-            <img width="592" height="395" alt="Interactive lesson on tablet" src="images/hero-bg-2.avif" loading="lazy" class="image_cover ratio_3x2" />
-          </div>
-        </div>
-        <div class="header">
-          <h1 class="heading_h1">Website Security<br/>Made Easy</h1>
-          <div class="at-risk">
-            <div class="usecase-card">
-              <h2 class="usecase-heading">Fix What's Putting Your Website at Risk Before It Costs You Customers.</h2>
-              <p class="usecase-paragraph">Most business owners don't realize their website is vulnerable until something breaks. ShadowScan uses AI to quickly check for real-world security issues and helps automatically fix them.</p>
+      <div class="w-layout-grid grid_2-col tablet-1-col gap-large hero-grid">
+        <div class="hero-visual">
+          <div class="hero-image-stack">
+            <div class="hero-image-card hero-image-card--top">
+              <img width="592" height="395" alt="Innovation lab background" src="images/hero-bg-1.avif" loading="eager" fetchpriority="high" />
+              <div class="hero-image-tag">
+                <span class="hero-image-tag-dot"></span>
+                AI Scanning · Live
+              </div>
+            </div>
+            <div class="hero-image-card hero-image-card--bottom">
+              <img width="592" height="395" alt="Interactive lesson on tablet" src="images/hero-bg-2.avif" loading="eager" />
+              <div class="hero-image-stat">
+                <div class="hero-image-stat-number">247</div>
+                <div class="hero-image-stat-label">Risks Detected</div>
+              </div>
+            </div>
+            <div class="hero-floating-badge" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Site Secured</span>
             </div>
           </div>
-          <div>
-            <div class="w-form">
-              <form id="email-form" name="email-form" method="post" action="https://formspree.io/f/xwpkvblg">
-                <label for="name">Name</label>
-                <input class="w-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" />
-                <label for="email">Email Address</label>
-                <input class="w-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" required />
-                <input type="submit" class="w-button" value="Get My Free Scan" />
-              </form>
-              <div class="w-form-done" style="display:none;">
-                <div>Thank you! Your submission has been received!</div>
+        </div>
+        <div class="header hero-content">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            AI-Powered Website Security
+          </div>
+          <h1 class="heading_h1 hero-title">Website Security<br/><span class="hero-title-accent">Made Easy.</span></h1>
+          <p class="hero-subtitle">Fix what's putting your website at risk before it costs you customers. ShadowScan uses AI to find real-world vulnerabilities and walks you through every fix in plain English.</p>
+          <div class="w-form hero-form-wrap">
+            <form id="email-form" name="email-form" method="post" action="https://formspree.io/f/xwpkvblg">
+              <div class="hero-form-fields">
+                <input class="w-input hero-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" aria-label="Name" />
+                <input class="w-input hero-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" required aria-label="Email Address" />
               </div>
-              <div class="w-form-fail" style="display:none;">
-                <div>Oops! Something went wrong while submitting the form.</div>
-              </div>
+              <input type="submit" class="w-button hero-submit" value="Get My Free Scan →" />
+              <p class="hero-form-disclaimer">Free preview scan · No credit card · Results in minutes</p>
+            </form>
+            <div class="w-form-done" style="display:none;">
+              <div>Thank you! Check your inbox for next steps.</div>
+            </div>
+            <div class="w-form-fail" style="display:none;">
+              <div>Oops! Something went wrong. Please try again.</div>
             </div>
           </div>
         </div>
