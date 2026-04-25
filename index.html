@@ -5,17 +5,22 @@
   <title>ShadowScan AI - Find Website Risks Before They Cost Sales</title>
   <meta name="description" content="ShadowScan AI helps business owners find website vulnerabilities, exposed files, and trust-damaging security issues before they cost leads, rankings, and sales." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1d3bb8" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://getshadowscan.com/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Find Website Risks Before They Cost Sales" />
   <meta property="og:description" content="ShadowScan AI helps business owners uncover exposed pages, weak settings, and trust-damaging website risks before they hurt sales or search visibility." />
-  <meta property="og:image" content="images/og-preview.png" />
+  <meta property="og:image" content="https://getshadowscan.com/images/og-preview.png" />
+  <meta property="og:url" content="https://getshadowscan.com/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Find Website Risks Before They Cost Sales" />
   <meta name="twitter:description" content="ShadowScan AI helps business owners uncover exposed pages, weak settings, and trust-damaging website risks before they hurt sales or search visibility." />
+  <meta name="twitter:image" content="https://getshadowscan.com/images/og-preview.png" />
 
   <!-- Favicon (replace with your own) -->
   <link rel="icon" href="images/og-preview.png" type="image/png" />
@@ -128,9 +133,12 @@
           <div class="w-form hero-form-wrap">
             <form id="email-form" name="email-form" method="post" action="https://formspree.io/f/xdaybydo">
               <div class="hero-form-fields">
-                <input class="w-input hero-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" aria-label="Name" />
-                <input class="w-input hero-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" required aria-label="Email Address" />
+                <input class="w-input hero-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" autocomplete="name" aria-label="Name" />
+                <input class="w-input hero-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" autocomplete="email" required aria-label="Email Address" />
               </div>
+              <!-- Formspree spam honeypot: real users leave this empty -->
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true" />
+              <input type="hidden" name="_subject" value="New ShadowScan free scan signup" />
               <input type="submit" class="w-button hero-submit" value="Get My Free Scan" />
               <p class="hero-form-disclaimer">Free preview scan · No credit card · Clear next steps</p>
             </form>
@@ -502,7 +510,7 @@
             <p>The same pattern kept showing up: smaller businesses were often exposed, but did not have access to the same visibility or expertise larger companies rely on.</p>
             <p>ShadowScan AI was created to close that gap with a simpler, action-oriented experience.</p>
             <p><strong class="bold-text-4">Website security made practical. No cybersecurity background required.</strong></p>
-            <p>If you'd like to connect, you can reach me here:<br/><a href="https://www.linkedin.com/in/bryantotty/"><strong>linkedin.com/in/bryantotty</strong></a></p>
+            <p>If you'd like to connect, you can reach me here:<br/><a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener noreferrer"><strong>linkedin.com/in/bryantotty</strong></a></p>
           </div>
           <button class="founder-read-more" id="founder-read-more-btn">Read more</button>
         </div>
@@ -524,16 +532,6 @@
         </a>
         <ul role="list" aria-label="Social media links" class="footer_icon-group margin_top-auto w-list-unstyled">
           <li class="margin-bottom_none">
-            <a href="#" class="footer_icon-link w-inline-block" aria-label="Facebook">
-              <div class="icon_small-1x1 text-color_inherit">
-                <svg width="100%" height="100%" viewBox="0 0 16 16">
-                  <path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z" fill="currentColor"></path>
-                </svg>
-              </div>
-              <span class="screen-reader">Facebook</span>
-            </a>
-          </li>
-          <li class="margin-bottom_none">
             <a href="https://www.instagram.com/shadowscan.ai/" target="_blank" rel="noopener noreferrer" class="footer_icon-link w-inline-block" aria-label="Instagram">
               <div class="icon_small-1x1 text-color_inherit">
                 <svg width="100%" height="100%" viewBox="0 0 16 16">
@@ -546,17 +544,7 @@
             </a>
           </li>
           <li class="margin-bottom_none">
-            <a href="#" class="footer_icon-link w-inline-block" aria-label="X (Twitter)">
-              <div class="icon_small-1x1 text-color_inherit">
-                <svg width="100%" height="100%" viewBox="0 0 16 16">
-                  <path d="M12.3723 1.16992H14.6895L9.6272 6.95576L15.5825 14.829H10.9196L7.26734 10.0539L3.08837 14.829H0.769833L6.18442 8.64037L0.471436 1.16992H5.2528L8.55409 5.53451L12.3723 1.16992ZM11.5591 13.4421H12.843L4.55514 2.48399H3.17733L11.5591 13.4421Z" fill="currentColor"></path>
-                </svg>
-              </div>
-              <span class="screen-reader">X</span>
-            </a>
-          </li>
-          <li class="margin-bottom_none">
-            <a href="#" class="footer_icon-link w-inline-block" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener noreferrer" class="footer_icon-link w-inline-block" aria-label="LinkedIn">
               <div class="icon_small-1x1 text-color_inherit">
                 <svg width="100%" height="100%" viewBox="0 0 16 16">
                   <path d="M15.3,0H0.7C0.3,0,0,0.3,0,0.7v14.7C0,15.7,0.3,16,0.7,16h14.7c0.4,0,0.7-0.3,0.7-0.7V0.7 C16,0.3,15.7,0,15.3,0z M4.7,13.6H2.4V6h2.4V13.6z M3.6,5C2.8,5,2.2,4.3,2.2,3.6c0-0.8,0.6-1.4,1.4-1.4c0.8,0,1.4,0.6,1.4,1.4 C4.9,4.3,4.3,5,3.6,5z M13.6,13.6h-2.4V9.9c0-0.9,0-2-1.2-2c-1.2,0-1.4,1-1.4,2v3.8H6.2V6h2.3v1h0c0.3-0.6,1.1-1.2,2.2-1.2 c2.4,0,2.8,1.6,2.8,3.6V13.6z" fill="currentColor"></path>
