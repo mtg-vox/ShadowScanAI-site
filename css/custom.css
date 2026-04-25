@@ -276,6 +276,39 @@ html {
   max-width: 480px;
 }
 
+.hero-proof-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-proof-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.hero-proof-list li::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
+  flex: none;
+}
+
 /* Form */
 .hero-form-wrap {
   margin-top: 0.5rem;
@@ -513,6 +546,136 @@ html {
 .trust-badge:hover {
   opacity: 0.9;
   transform: scale(1.05);
+}
+
+/* ============================
+   SALES FUNNEL FLOW SECTIONS
+   ============================ */
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.65rem;
+  color: #2d55d7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.section-kicker.on-dark {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.funnel-steps-section {
+  padding: 4rem 1rem;
+  background: #fff;
+}
+
+.funnel-section-header {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.funnel-section-header .heading_h2 {
+  margin-bottom: 0.75rem;
+}
+
+.funnel-section-header p:last-child {
+  margin: 0 auto;
+  max-width: 520px;
+  color: #5f6472;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.funnel-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.funnel-step-card {
+  padding: 1.35rem;
+  border: 1px solid rgba(29, 59, 184, 0.1);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  box-shadow: 0 14px 34px rgba(29, 59, 184, 0.08);
+}
+
+.funnel-step-number {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  color: #2d55d7;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.funnel-step-card h3 {
+  margin: 0 0 0.55rem;
+  color: #161a2d;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.funnel-step-card p {
+  margin: 0;
+  color: #5f6472;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.risk-check-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.risk-check-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: inherit;
+  line-height: 1.45;
+}
+
+.risk-check-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #2d55d7;
+  box-shadow: 0 0 0 4px rgba(45, 85, 215, 0.12);
+}
+
+.provides-section,
+.problems-section {
+  text-align: center;
+}
+
+.provides-section .heading_h2,
+.problems-section .heading_h2,
+#services .heading_h2,
+.section.is-secondary .heading_h2,
+#pricing .heading_h1,
+#founder .heading-2 {
+  margin-top: 0;
+  text-wrap: balance;
+}
+
+.provides-2,
+.usecase-card,
+.card_body.is-small {
+  height: 100%;
 }
 
 /* ============================
@@ -813,12 +976,17 @@ a, button, .w-button, input[type="submit"] {
   }
 
   .hero-title {
-    font-size: 2.25rem !important;
+    font-size: 2.18rem !important;
     line-height: 1.05 !important;
   }
 
   .hero-subtitle {
     font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-proof-list {
+    display: none;
   }
 
   .hero-form-fields {
@@ -829,51 +997,9 @@ a, button, .w-button, input[type="submit"] {
     padding: 1rem;
   }
 
-  /* Mobile hero visual: simpler, smaller stack */
+  /* Mobile-first: keep the scan form high priority and move imagery out of the way. */
   .hero-visual {
-    min-height: 320px;
-    order: 2;
-  }
-
-  .hero-image-stack {
-    min-height: 320px;
-  }
-
-  .hero-image-card--top {
-    width: 75%;
-    transform: rotate(-3deg);
-  }
-
-  .hero-image-card--bottom {
-    width: 70%;
-    transform: rotate(4deg);
-  }
-
-  @keyframes heroFloatA {
-    0%, 100% { transform: rotate(-3deg) translateY(0); }
-    50% { transform: rotate(-3deg) translateY(-6px); }
-  }
-
-  @keyframes heroFloatB {
-    0%, 100% { transform: rotate(4deg) translateY(0); }
-    50% { transform: rotate(4deg) translateY(-8px); }
-  }
-
-  .hero-floating-badge {
-    left: 0;
-    bottom: 12%;
-    font-size: 0.8rem;
-    padding: 8px 12px;
-  }
-
-  .hero-image-stat-number {
-    font-size: 1.25rem;
-  }
-
-  .hero-image-tag,
-  .hero-image-stat {
-    padding: 6px 10px;
-    font-size: 0.75rem;
+    display: none;
   }
 
   /* Put hero content first on mobile */
@@ -902,8 +1028,13 @@ a, button, .w-button, input[type="submit"] {
     line-height: 1.15 !important;
   }
 
+  .hero-elegant .hero-title {
+    font-size: 2.18rem !important;
+    line-height: 1.05 !important;
+  }
+
   .heading_h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.55rem !important;
     line-height: 1.2 !important;
   }
 
@@ -913,6 +1044,7 @@ a, button, .w-button, input[type="submit"] {
 
   .paragraph_large {
     font-size: 1rem !important;
+    line-height: 1.5 !important;
   }
 
   /* Hero section mobile */
@@ -936,6 +1068,34 @@ a, button, .w-button, input[type="submit"] {
     gap: 1rem !important;
   }
 
+  .funnel-steps-section {
+    padding: 2.75rem 1rem;
+  }
+
+  .funnel-section-header {
+    margin-bottom: 1.4rem;
+  }
+
+  .funnel-section-header p:last-child {
+    font-size: 0.96rem;
+  }
+
+  .funnel-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .funnel-step-card {
+    padding: 1.1rem;
+    border-radius: 14px;
+  }
+
+  .risk-check-list {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
   /* Use-case cards */
   .usecase-cards-wrapper {
     flex-direction: column;
@@ -951,7 +1111,7 @@ a, button, .w-button, input[type="submit"] {
   .section:not(.is-accent-primary),
   .provides-section,
   .problems-section {
-    padding: 2.5rem 1rem !important;
+    padding: 2.75rem 1rem !important;
   }
 
   .container,
@@ -965,6 +1125,8 @@ a, button, .w-button, input[type="submit"] {
     width: 100% !important;
     height: auto !important;
     border-radius: 8px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   /* Footer mobile */
@@ -1018,14 +1180,23 @@ a, button, .w-button, input[type="submit"] {
     font-size: 1.65rem !important;
   }
 
-  .heading_h2 {
-    font-size: 1.3rem !important;
+  .hero-elegant .hero-title {
+    font-size: 2rem !important;
   }
 
-  .section,
+  .heading_h2 {
+    font-size: 1.38rem !important;
+  }
+
+  .section:not(.hero-elegant),
   .provides-section,
-  .problems-section {
-    padding: 2rem 0.75rem !important;
+  .problems-section,
+  .funnel-steps-section {
+    padding: 2.35rem 0.75rem !important;
+  }
+
+  .hero-elegant {
+    padding: 4.9rem 0 2.6rem !important;
   }
 
   .card_body.is-small {
