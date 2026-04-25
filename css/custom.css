@@ -1,6 +1,168 @@
 /* ShadowScan AI - Custom Overrides & Mobile-First Enhancements */
 
 /* ============================
+   COOKIE BANNER
+   ============================ */
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9999;
+  background: #0f1424;
+  color: #f0f2f8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  padding: 1rem 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.cookie-banner.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cookie-banner-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  justify-content: space-between;
+}
+
+.cookie-banner-text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  flex: 1 1 280px;
+  color: #d8dcec;
+}
+
+.cookie-banner-text a {
+  color: #9bbbff;
+  text-decoration: underline;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  background: transparent;
+  color: #f0f2f8;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.cookie-btn:hover { background: rgba(255, 255, 255, 0.06); }
+.cookie-btn:active { transform: translateY(1px); }
+
+.cookie-btn-accept {
+  background: #2d55d7;
+  border-color: #2d55d7;
+}
+.cookie-btn-accept:hover { background: #244ac1; border-color: #244ac1; }
+
+@media (max-width: 600px) {
+  .cookie-banner { padding: 0.85rem 0.95rem; }
+  .cookie-banner-actions { width: 100%; justify-content: flex-end; }
+}
+
+/* ============================
+   FORM CONSENT + FINEPRINT
+   ============================ */
+.hero-form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0.6rem 0 0.4rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+}
+
+.hero-form-consent input[type="checkbox"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #4ade80;
+  cursor: pointer;
+}
+
+.hero-form-consent a {
+  color: #d6e3ff;
+  text-decoration: underline;
+}
+
+.hero-form-consent a:hover { color: #ffffff; }
+
+.hero-form-fineprint {
+  margin: 0.45rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+}
+
+/* ============================
+   FOOTER LEGAL
+   ============================ */
+.footer-legal {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.88rem;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-legal a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-legal span {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-copy {
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 720px;
+}
+
+@media (max-width: 600px) {
+  .footer-legal,
+  .footer-copy {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ============================
    SMOOTH SCROLLING
    ============================ */
 html {

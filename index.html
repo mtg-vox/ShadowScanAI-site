@@ -34,18 +34,14 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css" />
   <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (consent-gated; see js/main.js) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1141958824588736');
-    fbq('track', 'PageView');
+    n.queue=[]}(window, document,'script');
+    // Pixel script and PageView fire only after cookie consent.
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1141958824588736&ev=PageView&noscript=1" alt="" /></noscript>
 </head>
@@ -139,8 +135,13 @@
               <!-- Formspree spam honeypot: real users leave this empty -->
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true" />
               <input type="hidden" name="_subject" value="New ShadowScan free scan signup" />
+              <label class="hero-form-consent">
+                <input type="checkbox" name="authorization" id="authorization" required />
+                <span>I confirm I own this website or have authorization to request a security scan, and I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+              </label>
               <input type="submit" class="w-button hero-submit" value="Get My Free Scan" />
               <p class="hero-form-disclaimer">Free preview scan · No credit card · Clear next steps</p>
+              <p class="hero-form-fineprint">Informational only. Not professional cybersecurity, legal, or compliance advice.</p>
             </form>
             <div class="w-form-done" style="display:none;">
               <div>You're in. Check your inbox for your next step and scan details.</div>
@@ -564,6 +565,16 @@
             </a>
           </li>
         </ul>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="terms.html">Terms of Service</a>
+          <span aria-hidden="true">·</span>
+          <a href="contact.html">Contact</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" id="cookie-preferences-link">Cookie Preferences</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 ShadowScan AI. All rights reserved. Reports are informational only and do not constitute professional cybersecurity, legal, or compliance advice.</p>
       </div>
     </div>
   </footer>
@@ -573,6 +584,17 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     Get Free Scan
   </a>
+
+  <!-- Cookie consent banner -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <div class="cookie-banner-inner">
+      <p class="cookie-banner-text">We use cookies for essential site function and, with your permission, marketing analytics (Meta Pixel) to improve our ads. See our <a href="privacy.html">Privacy Policy</a>.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="cookie-btn cookie-btn-decline" id="cookie-decline">Decline</button>
+        <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>
+      </div>
+    </div>
+  </div>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>

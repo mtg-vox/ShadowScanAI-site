@@ -3,6 +3,79 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ============================
+  // COOKIE CONSENT + META PIXEL LOADER
+  // ============================
+  var CONSENT_KEY = 'ssai_cookie_consent_v1';
+  var PIXEL_ID = '1141958824588736';
+  var banner = document.getElementById('cookie-banner');
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  var prefsLink = document.getElementById('cookie-preferences-link');
+
+  function loadMetaPixel() {
+    if (window._ssai_pixel_loaded) return;
+    window._ssai_pixel_loaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(s);
+    if (typeof fbq === 'function') {
+      fbq('init', PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+  }
+
+  function showBanner() {
+    if (!banner) return;
+    banner.hidden = false;
+    requestAnimationFrame(function () { banner.classList.add('is-visible'); });
+  }
+
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove('is-visible');
+    setTimeout(function () { banner.hidden = true; }, 250);
+  }
+
+  function setConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+
+  var stored = getConsent();
+  if (stored === 'accepted') {
+    loadMetaPixel();
+  } else if (stored === 'declined') {
+    // do nothing
+  } else {
+    showBanner();
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', function () {
+      setConsent('accepted');
+      hideBanner();
+      loadMetaPixel();
+    });
+  }
+  if (declineBtn) {
+    declineBtn.addEventListener('click', function () {
+      setConsent('declined');
+      hideBanner();
+    });
+  }
+  if (prefsLink) {
+    prefsLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem(CONSENT_KEY); } catch (err) {}
+      showBanner();
+    });
+  }
+
+  // ============================
   // MOBILE NAV TOGGLE
   // ============================
   const menuBtn = document.getElementById('mobile-menu-btn');
