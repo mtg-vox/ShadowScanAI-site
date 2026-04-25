@@ -120,6 +120,50 @@
 }
 
 /* ============================
+   FOUNDER LINKEDIN BADGE
+   ============================ */
+.founder-connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.founder-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #d6e3ff !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none !important;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+}
+
+.founder-linkedin svg {
+  color: #0a66c2; /* LinkedIn brand blue */
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 1px;
+  flex-shrink: 0;
+}
+
+.founder-linkedin:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff !important;
+}
+
+.founder-linkedin:active { transform: translateY(1px); }
+
+
+/* ============================
    FOOTER LEGAL
    ============================ */
 .footer-stack {
