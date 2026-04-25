@@ -518,12 +518,13 @@ html {
 
 .trust-badges-label {
   text-align: center;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #6b6b75;
-  margin-bottom: 1.25rem;
-  font-weight: 600;
+  font-size: 1.08rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: #3d4556;
+  margin-bottom: 1.1rem;
+  font-weight: 650;
+  line-height: 1.35;
 }
 
 .trust-badges-row {
@@ -557,17 +558,17 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.9rem;
   color: #2d55d7;
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  line-height: 1.2;
-  text-transform: uppercase;
+  font-size: 1.08rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  text-transform: none;
 }
 
 .section-kicker.on-dark {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .funnel-steps-section {
@@ -1103,6 +1104,11 @@ a, button, .w-button, input[type="submit"] {
 }
 
 @media screen and (max-width: 767px) {
+  .trust-badges-label,
+  .section-kicker {
+    font-size: 1rem;
+  }
+
   /* Floating CTA visible on mobile */
   .floating-cta.is-visible {
     display: inline-flex;
