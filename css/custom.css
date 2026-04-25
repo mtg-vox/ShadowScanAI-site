@@ -712,6 +712,32 @@ html {
   height: 100%;
 }
 
+#services {
+  padding-top: 5rem;
+}
+
+#services > .header.is-align-center {
+  margin-bottom: 3.5rem;
+}
+
+#services .heading_h2 {
+  margin-bottom: 0;
+}
+
+#services .flex_vertical.gap-xxlarge {
+  gap: 5rem !important;
+}
+
+#services .grid_2-col.tablet-1-col.gap-large {
+  align-items: center;
+  margin-bottom: 0 !important;
+}
+
+#services .image {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 /* ============================
    POPULAR PRICING BADGE
    ============================ */
