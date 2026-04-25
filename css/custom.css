@@ -1350,7 +1350,7 @@ a, button, .w-button, input[type="submit"] {
   .founder .subheading,
   .founder-bio {
     font-size: 0.95rem !important;
-    text-align: left;
+    text-align: center;
   }
 
   /* Founder bio: collapsed by default on mobile (JS handles) */
