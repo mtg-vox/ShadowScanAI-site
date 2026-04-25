@@ -12,6 +12,33 @@ document.addEventListener('DOMContentLoaded', function () {
   var declineBtn = document.getElementById('cookie-decline');
   var prefsLink = document.getElementById('cookie-preferences-link');
 
+  // Visitors in the EU/EEA, UK, or Switzerland get the consent banner (GDPR/UK GDPR/Swiss FADP).
+  // Detection uses the browser's IANA timezone -- no external geo lookup, no extra requests.
+  var EU_LIKE_TIMEZONES = {
+    'Europe/Vienna':1,'Europe/Brussels':1,'Europe/Sofia':1,'Europe/Zagreb':1,'Asia/Famagusta':1,'Asia/Nicosia':1,
+    'Europe/Prague':1,'Europe/Copenhagen':1,'Europe/Tallinn':1,'Europe/Helsinki':1,'Europe/Paris':1,
+    'Europe/Berlin':1,'Europe/Busingen':1,'Europe/Athens':1,'Europe/Budapest':1,'Europe/Dublin':1,
+    'Europe/Rome':1,'Europe/Riga':1,'Europe/Vilnius':1,'Europe/Luxembourg':1,'Europe/Malta':1,
+    'Europe/Amsterdam':1,'Europe/Warsaw':1,'Europe/Lisbon':1,'Atlantic/Azores':1,'Atlantic/Madeira':1,
+    'Europe/Bucharest':1,'Europe/Bratislava':1,'Europe/Ljubljana':1,'Europe/Madrid':1,'Africa/Ceuta':1,
+    'Atlantic/Canary':1,'Europe/Stockholm':1,
+    // EEA (non-EU)
+    'Atlantic/Reykjavik':1,'Europe/Vaduz':1,'Europe/Oslo':1,'Arctic/Longyearbyen':1,
+    // UK + Crown Dependencies
+    'Europe/London':1,'Europe/Guernsey':1,'Europe/Jersey':1,'Europe/Isle_of_Man':1,'Atlantic/Faroe':1,
+    // Switzerland
+    'Europe/Zurich':1
+  };
+
+  function isEuLikeVisitor() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      return !!EU_LIKE_TIMEZONES[tz];
+    } catch (e) {
+      return false;
+    }
+  }
+
   function loadMetaPixel() {
     if (window._ssai_pixel_loaded) return;
     window._ssai_pixel_loaded = true;
@@ -46,7 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var stored = getConsent();
-  if (stored === 'accepted') {
+  var requiresConsent = isEuLikeVisitor();
+
+  if (!requiresConsent) {
+    // Outside EU/EEA/UK/CH: load the Pixel without showing a banner.
+    loadMetaPixel();
+  } else if (stored === 'accepted') {
     loadMetaPixel();
   } else if (stored === 'declined') {
     // do nothing
@@ -71,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     prefsLink.addEventListener('click', function (e) {
       e.preventDefault();
       try { localStorage.removeItem(CONSENT_KEY); } catch (err) {}
+      // Always allow re-opening the banner from the footer link, regardless of region.
       showBanner();
     });
   }

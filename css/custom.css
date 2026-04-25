@@ -122,11 +122,29 @@
 /* ============================
    FOOTER LEGAL
    ============================ */
+.footer-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-stack .logo {
+  justify-content: center;
+}
+
+.footer-stack .footer_icon-group {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer-legal {
   margin-top: 1.25rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem 0.5rem;
   font-size: 0.88rem;
 }
@@ -152,6 +170,9 @@
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.55);
   max-width: 720px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 600px) {
