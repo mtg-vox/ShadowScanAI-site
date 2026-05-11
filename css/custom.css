@@ -162,6 +162,10 @@
 
 .founder-linkedin:active { transform: translateY(1px); }
 
+#founder .founder-connect {
+  justify-content: flex-start;
+}
+
 
 /* ============================
    FOOTER LEGAL
@@ -240,7 +244,7 @@ html {
 .hero-elegant {
   position: relative;
   background: radial-gradient(ellipse 80% 60% at 70% 20%, #4a6cf7 0%, #2547d4 45%, #1d3bb8 100%) !important;
-  padding: 6rem 0 7rem !important;
+  padding: clamp(2.75rem, 4vw, 4rem) 0 5.5rem !important;
   margin-bottom: 0 !important;
   overflow: hidden !important;
   max-height: none !important;
@@ -285,14 +289,14 @@ html {
 /* ----- Hero Visual (image stack) ----- */
 .hero-visual {
   position: relative;
-  min-height: 540px;
+  min-height: 480px;
 }
 
 .hero-image-stack {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 540px;
+  min-height: 480px;
 }
 
 .hero-image-card {
@@ -1069,24 +1073,97 @@ html {
 }
 
 #founder.section.is-inverse {
-  padding-top: 4rem;
+  padding-top: clamp(4rem, 7vw, 6.5rem);
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+  scroll-margin-top: 84px;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(154, 216, 61, 0.12), transparent 34%),
+    radial-gradient(circle at 84% 6%, rgba(79, 108, 214, 0.26), transparent 32%),
+    #101426 !important;
+}
+
+.founder-container {
+  max-width: 1120px;
+}
+
+.founder-section-header {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  text-align: center;
 }
 
 #founder .heading-2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
+  font-size: clamp(3.4rem, 6vw, 5.25rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
 }
 
-.founder {
-  max-width: 780px;
+.founder-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.founder-media {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.founder-media img {
+  display: block;
+  width: min(100%, 320px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.founder-credential-card {
+  width: min(88%, 280px);
+  margin-top: -2.8rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(13, 19, 42, 0.9);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+  text-align: left;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.founder-credential-card span {
+  display: block;
+  color: #9ad83d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.founder-credential-card strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: #fff;
+  font-size: 0.98rem;
+  line-height: 1.3;
 }
 
 .founder-bio {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
+  margin: 0;
   color: rgba(255, 255, 255, 0.78) !important;
-  font-size: 1.04rem !important;
+  font-size: 1rem !important;
   line-height: 1.62 !important;
+  text-align: left;
 }
 
 .founder-bio p {
@@ -1098,10 +1175,45 @@ html {
 .founder-bio .bold-text-3,
 .founder-bio .bold-text-4 {
   display: block;
-  color: rgba(255, 255, 255, 0.92) !important;
-  font-size: clamp(1.25rem, 2vw, 1.7rem) !important;
-  line-height: 1.22 !important;
-  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: clamp(1.05rem, 1.7vw, 1.34rem) !important;
+  line-height: 1.28 !important;
+  letter-spacing: 0;
+}
+
+.founder-lede .bold-text {
+  font-size: clamp(1.45rem, 3vw, 2.35rem) !important;
+  line-height: 1.05 !important;
+}
+
+.founder-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 1.2rem 0;
+}
+
+.founder-expertise-grid span {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.founder-independence-note {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid rgba(154, 216, 61, 0.85);
+  border-radius: 8px;
+  background: rgba(154, 216, 61, 0.08);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
 }
 
 .founder-bio a,
@@ -1162,6 +1274,10 @@ input:focus-visible {
   display: inline-flex;
 }
 
+.floating-cta.is-hidden-context {
+  display: none !important;
+}
+
 /* ============================
    FOUNDER BIO COLLAPSIBLE
    ============================ */
@@ -1195,6 +1311,10 @@ input:focus-visible {
 .founder-read-more:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+#founder .founder-read-more {
+  margin-top: 0.25rem;
 }
 
 /* ============================
@@ -1372,28 +1492,28 @@ a, button, .w-button, input[type="submit"] {
 
   /* Tighten nav on mobile */
   .nav-sticky .nav_container {
-    padding-top: 0.625rem !important;
-    padding-bottom: 0.625rem !important;
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.45rem !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
 
   .nav-sticky .nav_logo {
-    height: 2rem !important;
+    height: 1.85rem !important;
   }
 
   .nav-sticky .nav_logo-icon {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.55rem;
+    height: 1.55rem;
   }
 
   .nav-sticky .paragraph_large {
-    font-size: 1rem;
+    font-size: 0.94rem;
   }
 
   /* Hero spacing on mobile */
   .hero-elegant {
-    padding: 5.5rem 0 3rem !important;
+    padding: 1.35rem 0 2.75rem !important;
   }
 
   .hero-grid {
@@ -1406,9 +1526,7 @@ a, button, .w-button, input[type="submit"] {
   }
 
   .hero-eyebrow {
-    align-self: center;
-    justify-content: center;
-    text-align: center;
+    display: none;
   }
 
   .hero-title {
@@ -1632,7 +1750,7 @@ a, button, .w-button, input[type="submit"] {
   }
 
   .hero-elegant {
-    padding: 4.9rem 0 2.6rem !important;
+    padding: 1.15rem 0 2.35rem !important;
   }
 
   .card_body.is-small {
@@ -1671,4 +1789,105 @@ a, button, .w-button, input[type="submit"] {
   .founder-read-more {
     display: none;
   }
+}
+
+@media screen and (max-width: 767px) {
+  #founder.section.is-inverse {
+    padding-top: 4.25rem;
+  }
+
+  #founder .heading-2 {
+    max-width: 640px;
+    margin-inline: auto;
+    font-size: clamp(1.95rem, 8.2vw, 2.65rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .founder-panel {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 1.25rem;
+    border-radius: 14px;
+  }
+
+  .founder-section-header {
+    margin-bottom: 1rem;
+  }
+
+  #founder .section-kicker {
+    max-width: calc(100% - 2rem);
+    margin-inline: auto;
+    font-size: 0.72rem;
+    line-height: 1.28;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .founder-media img {
+    width: min(100%, 200px);
+    max-height: 260px;
+  }
+
+  .founder-credential-card {
+    width: min(92%, 220px);
+    margin-top: -1.45rem;
+    padding: 0.78rem 0.85rem;
+  }
+
+  .founder-credential-card strong {
+    font-size: 0.88rem;
+  }
+
+  .founder-bio {
+    text-align: left !important;
+    font-size: 0.96rem !important;
+  }
+
+  .founder-expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #founder .founder-connect {
+    justify-content: flex-start;
+  }
+}
+
+/* ===== ShadowScan widget override (when mounted inside the dark hero glass card) ===== */
+.hero-form-wrap.ssw-root,
+.hero-form-wrap .ssw-root {
+  color: #fff;
+}
+.hero-form-wrap .ssw-input {
+  background: rgba(255,255,255,.92);
+  color: #1a1a2e;
+  border-color: rgba(255,255,255,.5);
+}
+.hero-form-wrap .ssw-input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.25);
+}
+.hero-form-wrap .ssw-btn-primary {
+  background: #fff;
+  color: #1d3bb8;
+}
+.hero-form-wrap .ssw-btn-primary:hover {
+  background: #f0f4ff;
+}
+.hero-form-wrap .ssw-btn-ghost {
+  color: #fff;
+  border-color: rgba(255,255,255,.7);
+}
+.hero-form-wrap .ssw-consent,
+.hero-form-wrap .ssw-fineprint { color: rgba(255,255,255,.85); }
+.hero-form-wrap .ssw-consent a { color: #fff; text-decoration: underline; }
+.hero-form-wrap .ssw-error { background: rgba(255,255,255,.95); color: #991b1b; }
+
+/* When the widget swaps form for results, drop the glass background so the
+   colorful result hero/sample/paywall cards aren't double-bordered. */
+.hero-form-wrap:has(.ssw-result-hero),
+.hero-form-wrap:has(.ssw-progress) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }

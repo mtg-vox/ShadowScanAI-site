@@ -55,21 +55,29 @@
     <h2>5. How we share information</h2>
     <p>We do not sell personal information. We share limited data with service providers who help us run the business, including:</p>
     <ul>
-      <li><strong>Formspree</strong> &mdash; processes form submissions.</li>
-      <li><strong>Meta (Facebook) Pixel</strong> &mdash; ad measurement and optimization. Disable via the cookie banner.</li>
-      <li><strong>Google Fonts</strong> &mdash; serves the page font from Google's CDN.</li>
+      <li><strong>Our scanning API</strong> &mdash; the URL you submit, the optional email you provide, your IP address, and your user agent are sent to our own backend (api.getshadowscan.com) to perform the scan and generate your report.</li>
+      <li><strong>Meta (Facebook) Pixel</strong> &mdash; ad measurement and optimization. Disable via the cookie banner or by sending a Global Privacy Control (GPC) signal.</li>
+      <li><strong>Google Fonts</strong> &mdash; serves the page font from Google&rsquo;s CDN.</li>
       <li><strong>Hosting and email providers</strong> &mdash; to deliver the website and respond to you.</li>
+      <li><strong>Formspree</strong> &mdash; only used if you contact us through a Formspree-powered form. Not used by the free scan flow.</li>
       <li><strong>Legal authorities</strong> &mdash; if required by law.</li>
     </ul>
 
     <h2>6. Cookies and tracking</h2>
-    <p>We use a small number of cookies and similar technologies. Essential cookies enable basic site function. The Meta Pixel and similar marketing tools only run after you accept cookies via the banner. You can change your choice anytime by clearing your browser storage for this site.</p>
+    <p>We use a small number of cookies and similar technologies. Essential cookies enable basic site function. The Meta Pixel and similar marketing tools only run after you accept cookies via the banner. You can change your choice anytime by clearing your browser storage for this site. We also honor the <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener noreferrer">Global Privacy Control (GPC)</a> signal as a request to opt out of marketing tracking.</p>
 
     <h2>7. Your rights</h2>
     <p>Depending on where you live, you may have rights to access, correct, delete, or port the personal information we hold about you, and to opt out of certain processing such as targeted advertising or "sale/sharing" under California law. To exercise these rights email <a href="mailto:ShadowScanAI@proton.me">ShadowScanAI@proton.me</a>. We will respond within the timeframe required by applicable law.</p>
 
     <h2>8. Data retention</h2>
-    <p>We keep personal information only as long as needed to provide the service, comply with legal obligations, resolve disputes, and enforce our agreements. Form submissions are typically retained for up to 24 months.</p>
+    <p>We keep personal information only as long as needed to provide the service, comply with legal obligations, resolve disputes, and enforce our agreements. Specifically:</p>
+    <ul>
+      <li><strong>Scan records</strong> (URL, hostname, grade, findings) are retained for up to 90 days, then deleted or aggregated for service-improvement metrics.</li>
+      <li><strong>Lead and contact records</strong> (name, email, optional notes) are retained for up to 24 months from your last interaction.</li>
+      <li><strong>Server logs</strong> (truncated IP /24, user agent, timestamps) are retained for up to 30 days for abuse detection and incident response.</li>
+      <li><strong>Billing records</strong> are retained as required by US tax and accounting law.</li>
+    </ul>
+    <p>To request earlier deletion of your personal information, email <a href="mailto:ShadowScanAI@proton.me">ShadowScanAI@proton.me</a> with the subject line &ldquo;Delete my data&rdquo; from the email address you used. We will confirm and complete the deletion within 30 days unless we are legally required to retain it.</p>
 
     <h2>9. Security</h2>
     <p>We use reasonable administrative, technical, and physical safeguards to protect personal information. No method of transmission or storage is completely secure.</p>

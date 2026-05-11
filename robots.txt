@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /scan.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /contact.html
+
+Sitemap: https://getshadowscan.com/sitemap.xml

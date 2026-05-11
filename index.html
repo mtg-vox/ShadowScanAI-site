@@ -2,27 +2,50 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8" />
-  <title>ShadowScan AI - Find Website Risks Before They Cost Sales</title>
-  <meta name="description" content="ShadowScan AI helps business owners find website vulnerabilities, exposed files, and trust-damaging security issues before they cost leads, rankings, and sales." />
+  <title>ShadowScan AI — Website Security Built for the AI Era</title>
+  <meta name="description" content="Website security built for the AI era — for owners who shouldn't DIY this. Continuous monitoring, AI-builder fingerprinting, exposed-key detection, and plain-English fixes. Free instant scan." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+  <script>
+    // Hostname-aware CSP: production hosts get a strict policy. Localhost-only
+    // includes the dev engine origin so the widget can load during local testing.
+    (function () {
+      var host = location.hostname;
+      var isLocal = host === '127.0.0.1' || host === 'localhost' || host.endsWith('.local');
+      var apiOrigin = 'https://api.getshadowscan.com';
+      var devOrigin = isLocal ? ' http://127.0.0.1:8080' : '';
+      var csp =
+        "default-src 'self'; " +
+        "img-src 'self' data: https:; " +
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com " + apiOrigin + devOrigin + "; " +
+        "font-src 'self' https://fonts.gstatic.com data:; " +
+        "script-src 'self' 'unsafe-inline' https://connect.facebook.net " + apiOrigin + devOrigin + "; " +
+        "connect-src 'self' " + apiOrigin + " https://www.facebook.com https://connect.facebook.net" + devOrigin + "; " +
+        "base-uri 'self'; " +
+        "form-action 'self' " + apiOrigin + devOrigin + ";";
+      var meta = document.createElement('meta');
+      meta.setAttribute('http-equiv', 'Content-Security-Policy');
+      meta.setAttribute('content', csp);
+      document.head.appendChild(meta);
+    })();
+  </script>
   <meta name="theme-color" content="#1d3bb8" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://getshadowscan.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Find Website Risks Before They Cost Sales" />
-  <meta property="og:description" content="ShadowScan AI helps business owners uncover exposed pages, weak settings, and trust-damaging website risks before they hurt sales or search visibility." />
+  <meta property="og:title" content="Website Security Built for the AI Era" />
+  <meta property="og:description" content="For owners who shouldn't DIY this. Detects exposed AI keys, vibe-coded backends, prompt-injection surfaces, and the classic security gaps too. Continuous monitoring + plain-English fixes." />
   <meta property="og:image" content="https://getshadowscan.com/images/og-preview.png" />
   <meta property="og:url" content="https://getshadowscan.com/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Find Website Risks Before They Cost Sales" />
-  <meta name="twitter:description" content="ShadowScan AI helps business owners uncover exposed pages, weak settings, and trust-damaging website risks before they hurt sales or search visibility." />
+  <meta name="twitter:title" content="Website Security Built for the AI Era" />
+  <meta name="twitter:description" content="For owners who shouldn't DIY this. Continuous monitoring + AI-era checks for exposed keys, vibe-coded backends, and prompt-injection surfaces." />
   <meta name="twitter:image" content="https://getshadowscan.com/images/og-preview.png" />
 
   <!-- Favicon (replace with your own) -->
@@ -46,7 +69,7 @@
     n.queue=[]}(window, document,'script');
     // Pixel script and PageView fire only after cookie consent.
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1141958824588736&ev=PageView&noscript=1" alt="" /></noscript>
+  <!-- Meta Pixel <noscript> fallback intentionally removed: would bypass cookie consent. -->
 </head>
 
 <body class="body">
@@ -65,7 +88,7 @@
         </a>
       </div>
       <div class="nav_right">
-        <a href="#signup-form" class="nav-cta-btn">Get Free Scan</a>
+        <a href="#signup-form" class="nav-cta-btn">Run Free Scan</a>
         <button class="nav_mobile-menu-button" id="mobile-menu-btn" aria-label="Open navigation menu">
           <div class="icon on-accent-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -120,39 +143,18 @@
         <div class="header hero-content">
           <div class="hero-eyebrow">
             <span class="hero-eyebrow-dot"></span>
-            AI-powered website risk detection
+            Built for the AI era
           </div>
-          <h1 class="heading_h1 hero-title">Find Website Risks <span class="hero-title-accent">Before They Cost Sales.</span></h1>
-          <p class="hero-subtitle">ShadowScan checks your site for exposed pages, weak settings, outdated software, and trust problems that can hurt leads, rankings, and customer confidence.</p>
+          <h1 class="heading_h1 hero-title">Website security <span class="hero-title-accent">built for the AI era.</span></h1>
+          <p class="hero-subtitle">For owners who shouldn't DIY this. We catch exposed AI keys, vibe-coded backends, prompt-injection surfaces, and every classic security gap that quietly costs you trust and sales.</p>
           <ul class="hero-proof-list" aria-label="ShadowScan benefits">
-            <li>No technical experience needed</li>
-            <li>Safe public checks only</li>
-            <li>Plain-English fixes</li>
+            <li>18 checks · runs in under 60 seconds</li>
+            <li>Plain-English fixes, not security jargon</li>
+            <li>Continuous monitoring catches new risks the day they appear</li>
           </ul>
-          <div class="w-form hero-form-wrap">
-            <form id="email-form" name="email-form" method="post" action="https://formspree.io/f/xdaybydo">
-              <div class="hero-form-fields">
-                <input class="w-input hero-input" maxlength="256" name="name" placeholder="Your name" type="text" id="name" autocomplete="name" aria-label="Name" />
-                <input class="w-input hero-input" maxlength="256" name="email" placeholder="you@example.com" type="email" id="email" autocomplete="email" required aria-label="Email Address" />
-              </div>
-              <!-- Formspree spam honeypot: real users leave this empty -->
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true" />
-              <input type="hidden" name="_subject" value="New ShadowScan free scan signup" />
-              <label class="hero-form-consent">
-                <input type="checkbox" name="authorization" id="authorization" required />
-                <span>I confirm I own this website or have authorization to request a security scan, and I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
-              </label>
-              <input type="submit" class="w-button hero-submit" value="Get My Free Scan" />
-              <p class="hero-form-disclaimer">Free preview scan · No credit card · Clear next steps</p>
-              <p class="hero-form-fineprint">Informational only. Not professional cybersecurity, legal, or compliance advice.</p>
-            </form>
-            <div class="w-form-done" style="display:none;">
-              <div>You're in. Check your inbox for your next step and scan details.</div>
-            </div>
-            <div class="w-form-fail" style="display:none;">
-              <div>Something went wrong. Please try again in a moment.</div>
-            </div>
-          </div>
+          <!-- Live scan widget mounts here. JS + CSS loaded at end of <body>. -->
+          <div id="shadowscan-mount" class="hero-form-wrap"></div>
+          <p class="hero-form-fineprint">Informational only. Not professional cybersecurity, legal, or compliance advice.</p>
         </div>
       </div>
     </div>
@@ -161,19 +163,19 @@
   <!-- ===================== TRUST BADGES ===================== -->
   <section class="trust-badges-section">
     <div class="container">
-      <p class="trust-badges-label">Built with security experience from</p>
+      <p class="trust-badges-label">Built from practical security and cloud engineering experience</p>
       <div class="trust-badges-row">
         <div class="trust-badge">
-          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="18" fill="currentColor">Meta</text></svg>
+          <svg viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="15" fill="currentColor">Cloud Security</text></svg>
         </div>
         <div class="trust-badge">
-          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="16" fill="currentColor">Microsoft</text></svg>
+          <svg viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="15" fill="currentColor">Infrastructure</text></svg>
         </div>
         <div class="trust-badge">
-          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="18" fill="currentColor">IBM</text></svg>
+          <svg viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="15" fill="currentColor">Identity & Access</text></svg>
         </div>
         <div class="trust-badge">
-          <svg viewBox="0 0 120 40" width="120" height="40"><text x="60" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="16" fill="currentColor">Red Hat</text></svg>
+          <svg viewBox="0 0 160 40" width="160" height="40"><text x="80" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="15" fill="currentColor">Monitoring</text></svg>
         </div>
       </div>
     </div>
@@ -191,7 +193,7 @@
         <div class="funnel-step-card">
           <span class="funnel-step-number">01</span>
           <h3>Enter your site</h3>
-          <p>Start with your name and email. No credit card and no login access required.</p>
+          <p>Just your domain — email is optional. No credit card and no login access required.</p>
         </div>
         <div class="funnel-step-card">
           <span class="funnel-step-number">02</span>
@@ -408,112 +410,180 @@
     </div>
   </section>
 
+  <!-- ===================== AI-ERA DIFFERENTIATORS ===================== -->
+  <section class="section fade-in-section" aria-labelledby="ai-era-title" style="background:linear-gradient(180deg,#fafbff,#f1f3f9);">
+    <div class="container">
+      <div class="header is-align-center" style="margin-bottom:32px;">
+        <p class="section-kicker">The AI-era moat</p>
+        <h2 id="ai-era-title" class="heading_h2">7 checks no other scanner runs</h2>
+        <p style="max-width:640px;margin-inline:auto;">Every site scanner finds missing security headers. We do that too — but the real risks have shifted. AI tools generate insecure code, leak API keys into bundles, and create attack surfaces that didn't exist 18 months ago.</p>
+      </div>
+      <div class="grid_3-col tablet-1-col gap-small" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">Exposed AI keys</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Detects OpenAI, Anthropic, Replicate, HuggingFace, Stripe, AWS, GitHub keys hard-coded in your client-side JavaScript bundles — a common Lovable/Bolt/v0 mistake.</p>
+        </div>
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">Vibe-coded backends</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Probes Supabase, Firebase, PocketBase, S3 buckets, and other backends for unauthenticated APIs and public buckets — the #1 way AI-built apps get pwned.</p>
+        </div>
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">AI-builder fingerprint</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Identifies Lovable, Bolt.new, v0, Replit Agent, Cursor, Windsurf, Webflow, Wix, and Squarespace — each with its own known risk profile.</p>
+        </div>
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">Prompt-injection surface</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Catalogues every customer-facing AI feature on your site (chatbots, AI search, support agents) — each one is a new attack surface that needs guardrails.</p>
+        </div>
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">Agent-abuse risk</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Flags forms with no CAPTCHA — easy targets for AI agents to spam, scrape, or brute-force at scale. Yesterday's bot defense isn't enough.</p>
+        </div>
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">AI scraper exposure</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Audits your robots.txt + llms.txt against every major AI crawler (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Bytespider, more) so you control what they take.</p>
+        </div>
+        <div class="ai-check-card" style="background:#fff;border:1px solid #e5e8f0;border-radius:12px;padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1d3bb8;margin-bottom:8px;">SEO-injection / spam</div>
+          <p style="margin:0;font-size:14px;line-height:1.55;">Detects hidden spam pages and SEO-injection attacks that hijack your search results — increasingly automated by AI tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PRICING ===================== -->
   <section id="pricing" class="section is-inverse fade-in-section">
     <div class="container">
       <div class="header is-align-center">
         <p class="section-kicker on-dark">Choose your plan</p>
         <h2 class="heading_h1">Pick Your Protection Level</h2>
+        <p class="paragraph_large on-dark" style="opacity:.85;max-width:640px;margin-inline:auto;">A one-time scan tells you what's wrong today. Continuous monitoring catches what breaks <em>tomorrow</em> — when a developer ships a new bundle, a vendor adds a new chatbot, or an AI scraper crawls a page you forgot to lock down.</p>
       </div>
       <ul role="list" class="grid_4-col gap-small padding_none margin-bottom_none w-list-unstyled">
 
-        <!-- Preview -->
+        <!-- Free Preview -->
         <li class="card on-inverse">
           <div class="card_body is-small">
             <div class="margin_bottom-auto">
-              <h3 class="heading_h4">Preview</h3>
-              <p class="paragraph-3">Start with a one-time scan and sample report to see what your site may be exposing.</p>
+              <h3 class="heading_h4">Free Preview</h3>
+              <p class="paragraph-3">Letter grade, severity counts, and one fully-detailed sample finding so you know exactly what you're getting.</p>
             </div>
             <h4 class="heading_h2 margin-bottom_none">$0</h4>
-            <p class="text-color_secondary">Monthly</p>
+            <p class="text-color_secondary">Free, instant</p>
             <div class="margin-top_small">
               <div class="button-group is-vertical-stretch">
-                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Start free scan</div></a>
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Run free scan</div></a>
               </div>
             </div>
           </div>
         </li>
 
-        <!-- Starter -->
+        <!-- Single Report -->
         <li class="card on-inverse">
           <div class="card_body is-small">
             <div class="margin_bottom-auto">
-              <h3 class="heading_h4">Starter</h3>
-              <p class="paragraph-4">Monthly scans for business owners who want a simple recurring checkup and shareable reports.</p>
+              <h3 class="heading_h4">Single Report</h3>
+              <p class="paragraph-4">Full findings with plain-English explanations, fix steps, and a branded PDF you can hand to a developer. No subscription.</p>
             </div>
-            <h4 class="heading_h2 margin-bottom_none">$49</h4>
-            <p class="text-color_secondary">Monthly</p>
+            <h4 class="heading_h2 margin-bottom_none">$29</h4>
+            <p class="text-color_secondary">One-time</p>
             <div class="margin-top_small">
               <div class="button-group is-vertical-stretch">
-                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Choose Starter</div></a>
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Get full report</div></a>
               </div>
             </div>
           </div>
         </li>
 
-        <!-- Growth (MOST POPULAR) -->
+        <!-- Sentinel -->
+        <li class="card on-inverse">
+          <div class="card_body is-small">
+            <div class="margin_bottom-auto">
+              <h3 class="heading_h4">Sentinel</h3>
+              <p class="paragraph-5">Weekly automated scans with email alerts the moment a new risk appears. Best for solo founders and small sites.</p>
+            </div>
+            <h4 class="heading_h2 margin-bottom_none">$39</h4>
+            <p class="text-color_secondary">Per month</p>
+            <div class="margin-top_small">
+              <div class="button-group is-vertical-stretch">
+                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Choose Sentinel</div></a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Guardian (MOST POPULAR) -->
         <li class="card on-inverse is-popular">
           <div class="popular-badge">Most Popular</div>
           <div class="card_body is-small">
             <div class="margin_bottom-auto">
-              <h3 class="heading_h4">Growth</h3>
-              <p class="paragraph-5">Weekly scans and continuous monitoring for businesses that want to catch new risks before they become customer-facing problems.</p>
+              <h3 class="heading_h4">Guardian</h3>
+              <p class="paragraph-6">Daily monitoring + change-detection diff: we tell you exactly what changed and why it matters. AI-era checks included.</p>
             </div>
-            <h4 class="heading_h2 margin-bottom_none">$149</h4>
-            <p class="text-color_secondary">Monthly</p>
+            <h4 class="heading_h2 margin-bottom_none">$129</h4>
+            <p class="text-color_secondary">Per month</p>
             <div class="margin-top_small">
               <div class="button-group is-vertical-stretch">
-                <a href="#signup-form" class="button is-secondary w-inline-block is-popular-btn"><div>Choose Growth</div></a>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- Pro -->
-        <li class="card on-inverse">
-          <div class="card_body is-small">
-            <div class="margin_bottom-auto">
-              <h3 class="heading_h4">Pro</h3>
-              <p class="paragraph-6">Weekly scans, continuous monitoring, faster support, and a stronger safety net for higher-stakes websites.</p>
-            </div>
-            <h4 class="heading_h2 margin-bottom_none">$399</h4>
-            <p class="text-color_secondary">Monthly</p>
-            <div class="margin-top_small">
-              <div class="button-group is-vertical-stretch">
-                <a href="#signup-form" class="button is-secondary w-inline-block"><div>Choose Pro</div></a>
+                <a href="#signup-form" class="button is-secondary w-inline-block is-popular-btn"><div>Choose Guardian</div></a>
               </div>
             </div>
           </div>
         </li>
 
       </ul>
+
+      <!-- Concierge tier — full-width row beneath the four standard tiers -->
+      <div class="concierge-card" style="margin-top:24px;background:linear-gradient(135deg,rgba(29,59,184,.18),rgba(132,204,22,.12));border:1.5px solid rgba(255,255,255,.18);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;color:#fff;">
+        <div>
+          <h3 class="heading_h4" style="margin:0 0 6px;">Concierge — $349/mo</h3>
+          <p style="margin:0;opacity:.9;">Everything in Guardian, plus a dedicated security engineer who reviews findings, applies fixes for you, and is on call when something breaks. For owners who want it handled — not handed off.</p>
+        </div>
+        <a href="#signup-form" class="button is-secondary w-inline-block" style="white-space:nowrap;"><div>Talk to us</div></a>
+      </div>
     </div>
   </section>
 
   <!-- ===================== THE FOUNDER ===================== -->
   <section id="founder" class="section is-inverse fade-in-section">
-    <div class="founder">
-      <div class="header is-align-center">
+    <div class="container founder-container">
+      <div class="founder-section-header">
         <p class="section-kicker on-dark">Built by hands-on security experience</p>
-        <h2 class="heading-2">Built By A Security Engineer</h2>
-        <img
-          src="images/founder.jpg"
-          loading="lazy"
-          width="367"
-          sizes="(max-width: 479px) 100vw, 367px"
-          alt="Bryan Totty Founder"
-          srcset="images/founder-500.jpg 500w, images/founder-800.jpg 800w, images/founder.jpg 1000w"
-        />
+        <h2 class="heading-2">Built by a security engineer</h2>
+      </div>
+
+      <div class="founder-panel">
+        <div class="founder-media">
+          <img
+            src="images/founder.jpg"
+            loading="lazy"
+            width="367"
+            sizes="(max-width: 767px) 76vw, 320px"
+            alt="Bryan Totty Founder"
+            srcset="images/founder-500.jpg 500w, images/founder-800.jpg 800w, images/founder.jpg 1000w"
+          />
+          <div class="founder-credential-card" aria-label="Founder background summary">
+            <span>15+ years</span>
+            <strong>Cybersecurity and cloud engineering</strong>
+          </div>
+        </div>
+
         <div class="subheading founder-bio">
-          <p><strong class="bold-text">Built by a cybersecurity and cloud engineer with 15+ years of experience.</strong></p>
+          <p class="founder-lede"><strong class="bold-text">Practical website security for owners who need clarity, not complexity.</strong></p>
           <p>I'm Bryan Totty, founder of ShadowScan AI. I built this for business owners who know website security matters but do not have time to become cybersecurity experts.</p>
-          <p><strong class="bold-text-2">I've held security positions at: Meta (Facebook), Microsoft, IBM, and Red Hat.</strong></p>
+          <div class="founder-expertise-grid" aria-label="Relevant founder background">
+            <span>Cloud security</span>
+            <span>Infrastructure hardening</span>
+            <span>Identity and access</span>
+            <span>Monitoring and automation</span>
+          </div>
+          <p><strong class="bold-text-2">My background spans cloud security, infrastructure, identity, monitoring, and automation in large-scale technology environments.</strong></p>
           <div class="founder-bio-expandable" id="founder-bio-more">
-            <p>My background includes cloud security, infrastructure hardening, identity and access management, monitoring, automation, and secure systems design across Azure, AWS, and hybrid environments.</p>
+            <p>My background includes infrastructure hardening, secure systems design, identity and access management, monitoring, automation, and cloud security across Azure, AWS, and hybrid environments.</p>
             <p><strong class="bold-text-3">I've spent years building tools and systems that reduce real operational risk.</strong></p>
             <p>The same pattern kept showing up: smaller businesses were often exposed, but did not have access to the same visibility or expertise larger companies rely on.</p>
             <p>ShadowScan AI was created to close that gap with a simpler, action-oriented experience.</p>
             <p><strong class="bold-text-4">Website security made practical. No cybersecurity background required.</strong></p>
+            <p class="founder-independence-note">ShadowScan AI is independent and is not affiliated with, sponsored by, or endorsed by any prior employer.</p>
             <p class="founder-connect">If you'd like to connect:
               <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener noreferrer" class="founder-linkedin" aria-label="Bryan Totty on LinkedIn">
                 <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -583,6 +653,8 @@
           <a href="contact.html">Contact</a>
           <span aria-hidden="true">·</span>
           <a href="#" id="cookie-preferences-link">Cookie Preferences</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" id="do-not-sell-link">Do Not Sell or Share My Personal Information</a>
         </nav>
         <p class="footer-copy">&copy; 2026 ShadowScan AI. All rights reserved. Reports are informational only and do not constitute professional cybersecurity, legal, or compliance advice.</p>
       </div>
@@ -607,6 +679,28 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260507-founder"></script>
+
+  <!-- ShadowScan live scan widget — uses local engine when served locally, prod API otherwise -->
+  <script>
+    (function () {
+      var host = location.hostname;
+      var isLocal = host === '127.0.0.1' || host === 'localhost' || host.endsWith('.local');
+      var apiBase = isLocal ? 'http://127.0.0.1:8080' : 'https://api.getshadowscan.com';
+
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = apiBase + '/web/scan-widget.css';
+      document.head.appendChild(link);
+
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = apiBase + '/web/scan-widget.js';
+      s.setAttribute('data-api', apiBase);
+      s.setAttribute('data-mount', '#shadowscan-mount');
+      s.setAttribute('data-redirect', '/scan.html');
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>

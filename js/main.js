@@ -75,7 +75,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var stored = getConsent();
   var requiresConsent = isEuLikeVisitor();
 
-  if (!requiresConsent) {
+  // Respect the Global Privacy Control signal anywhere it appears.
+  // https://globalprivacycontrol.org/  -- treat as an explicit opt-out.
+  var gpc = (navigator && navigator.globalPrivacyControl) === true;
+  if (gpc) {
+    setConsent('declined');
+    stored = 'declined';
+  }
+
+  if (gpc) {
+    // Honor GPC silently.
+  } else if (!requiresConsent) {
     // Outside EU/EEA/UK/CH: load the Pixel without showing a banner.
     loadMetaPixel();
   } else if (stored === 'accepted') {
@@ -105,6 +115,18 @@ document.addEventListener('DOMContentLoaded', function () {
       try { localStorage.removeItem(CONSENT_KEY); } catch (err) {}
       // Always allow re-opening the banner from the footer link, regardless of region.
       showBanner();
+    });
+  }
+
+  // CCPA / CPRA: "Do Not Sell or Share" footer link. We do not sell data, but
+  // we treat this as an explicit opt-out of marketing pixels (decline + close).
+  var doNotSellLink = document.getElementById('do-not-sell-link');
+  if (doNotSellLink) {
+    doNotSellLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      setConsent('declined');
+      hideBanner();
+      try { window.alert('Marketing tracking is now off for this browser.'); } catch (err) {}
     });
   }
 
@@ -160,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================
   const floatingCta = document.getElementById('floating-cta');
   const heroSection = document.getElementById('signup-form');
+  const founderSection = document.getElementById('founder');
 
   if (floatingCta && heroSection) {
     var floatingVisible = false;
@@ -178,6 +201,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0.1 });
 
     floatingObserver.observe(heroSection);
+
+    if (founderSection) {
+      var updateFloatingContext = function () {
+        var rect = founderSection.getBoundingClientRect();
+        var overlapsFounder = rect.top < window.innerHeight - 80 && rect.bottom > 120;
+        floatingCta.classList.toggle('is-hidden-context', overlapsFounder);
+      };
+
+      window.addEventListener('scroll', updateFloatingContext, { passive: true });
+      window.addEventListener('resize', updateFloatingContext);
+      updateFloatingContext();
+      setTimeout(updateFloatingContext, 250);
+    }
   }
 
   // ============================
@@ -227,48 +263,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ============================
-  // FORM SUBMISSION + CONVERSION TRACKING
+  // (Removed) Legacy Formspree submission handler
+  // The home page no longer renders a Formspree form. Lead capture is handled
+  // by the ShadowScan scan widget which posts to the engine API directly.
   // ============================
-  const form = document.getElementById('email-form');
-  const formDone = document.querySelector('.w-form-done');
-  const formFail = document.querySelector('.w-form-fail');
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var name = form.querySelector('#name').value.trim();
-      var email = form.querySelector('#email').value.trim();
-
-      if (!email) {
-        if (formFail) formFail.style.display = 'block';
-        return;
-      }
-
-      // Submit to Formspree
-      var formData = new FormData(form);
-
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(function (response) {
-        if (response.ok) {
-          form.style.display = 'none';
-          if (formDone) formDone.style.display = 'block';
-          if (formFail) formFail.style.display = 'none';
-
-          // Fire Meta Pixel Lead event
-          if (typeof fbq === 'function') {
-            fbq('track', 'Lead', { content_name: 'Free Scan Signup' });
-          }
-        } else {
-          if (formFail) formFail.style.display = 'block';
-        }
-      }).catch(function () {
-        if (formFail) formFail.style.display = 'block';
-      });
-    });
-  }
 
 });
