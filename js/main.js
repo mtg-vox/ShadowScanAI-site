@@ -203,10 +203,16 @@ document.addEventListener('DOMContentLoaded', function () {
     floatingObserver.observe(heroSection);
 
     if (founderSection) {
+      var conciergeCard = document.querySelector('.concierge-card');
       var updateFloatingContext = function () {
         var rect = founderSection.getBoundingClientRect();
         var overlapsFounder = rect.top < window.innerHeight - 80 && rect.bottom > 120;
-        floatingCta.classList.toggle('is-hidden-context', overlapsFounder);
+        var overlapsConcierge = false;
+        if (conciergeCard) {
+          var cRect = conciergeCard.getBoundingClientRect();
+          overlapsConcierge = cRect.top < window.innerHeight - 80 && cRect.bottom > 120;
+        }
+        floatingCta.classList.toggle('is-hidden-context', overlapsFounder || overlapsConcierge);
       };
 
       window.addEventListener('scroll', updateFloatingContext, { passive: true });
