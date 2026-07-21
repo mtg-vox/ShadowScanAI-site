@@ -415,7 +415,7 @@ html {
   margin-top: 4px;
 }
 
-/* Floating "Site Secured" badge */
+/* Floating public-checks badge */
 .hero-floating-badge {
   position: absolute;
   bottom: 20%;
